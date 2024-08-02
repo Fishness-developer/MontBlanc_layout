@@ -1,0 +1,14 @@
+// Scss Document
+@mixin font-face($font-size, $font-weight, $font-color){
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $font-color;
+}
+
+@mixin block-set($width, $height, $padding, $margin, $background){
+	width:$width;
+	height: $height;
+	padding: $padding;
+	margin: $margin;
+	background: $background;
+}
