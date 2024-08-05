@@ -337,9 +337,19 @@ textarea {
 
 body {
   font-family: var(--font-family-roboto);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
-  color: var(--color-dark); }
+  color: var(--color-dark);
+  line-height: 21px; }
+
+.button, input {
+  border-radius: 40px;
+  height: 44px;
+  padding: 0 20px; }
+
+.icons_svg {
+  width: 30px;
+  height: 18px; }
 
 .header {
   width: 100vw;
@@ -348,3 +358,29 @@ body {
   margin: 0;
   background: var(--color-green);
   box-sizing: border-box; }
+  .header__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .header__button {
+    font-family: var(--font-family-roboto);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-white);
+    line-height: 21px;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center; }
+  .header__button p {
+    margin-top: 3px; }
+  .header__input {
+    font-family: var(--font-family-roboto);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-white);
+    line-height: 21px;
+    background: #3FA81F;
+    border: 1px solid rgba(0, 0, 0, 0.2); }

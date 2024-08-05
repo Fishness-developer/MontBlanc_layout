@@ -4,16 +4,54 @@
 @import 'variables';
 @import 'mixins';
 
+
+
 body{
 	font-family: var(--font-family-roboto);
-	@include font-face (16px, 300, var(--color-dark));
+	@include font-face ($font-size-regular*1px, 300, var(--color-dark));
+	
 }
 
+.button, input{
+	border-radius: #{$border-radius-button}px;
+	height: #{$height-button}px;
+	padding: #{$padding-button}px;	
+}
+
+.icons_svg{
+	width: 30px;
+	height: 18px;
+}
 .header{
 	@include block-set(100vw, 120px, 20px 50px, 0, var(--color-green));
 	box-sizing: border-box;
 	
 	&__inner{
-		
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	&__button{
+		font-family: var(--font-family-roboto);
+		@include font-face ($font-size-regular*1px, 500, var(--color-white));
+		text-transform: uppercase;
+		background: none;
+		border: 1px solid #fff;
+		display: flex;
+		align-items: center;
+	}
+	
+	&__button p{
+		margin-top: 3px;
+	}
+	
+	&__input{
+		font-family: var(--font-family-roboto);
+		@include font-face ($font-size-regular*1px, 300, var(--color-white));
+		background: #3FA81F;
+		border: 1px solid rgba(0,0,0,0.2);
 	}
 }
+
