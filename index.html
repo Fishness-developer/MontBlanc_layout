@@ -5,7 +5,29 @@
 <title>Mont Blank</title>
 <script src="scripts/script.js"	defer></script>
 <link href="styles/style.css" rel="stylesheet" type="text/css">
-	
+	<script>
+			// Функция для установки куки
+		function setCookie(name, value, days) {
+			let expires = "";
+			if (days) {
+				const date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie =name + "=" +  value + expires;
+			console.log(document.cookie);
+		}
+
+			// Получаем параметры из URL
+			//const urlParams = new URL(window.location.href);
+			const urlParams = new URL('http://site.com?token=1798805276176326656-OopZ0K9glnaLEdOj34ID4xwDQmTj6i&id=1798805276176326656');
+			const token=urlParams.searchParams.get('token');
+			const id = urlParams.searchParams.get('id');
+
+			 // Сохраняем параметры в куки
+			setCookie("token", token, 7); // Кука будет действительна 7 дней
+			setCookie('id', id, 7); 
+	</script>
 </head>
 
 <body>
@@ -19,14 +41,13 @@
     </button>
     <input class="header__input input"/>
     <button class="header__button button">
-		<svg class="icons_svg">
+    <svg class="icons_svg">
       <use xlink:href="#cart"></use>
-    </svg><p>Корзина</p></button>
-	   
+    </svg>
+    <p>Корзина</p>
+    </button>
     <div class="header_contact phone"></div>
-    <button class="header__burger burger">
-	 
-	  </button>
+    <button class="header__burger burger"> </button>
   </div>
 </header>
 
@@ -34,7 +55,9 @@
 <svg display="none">
   <symbol id="goods" >
     <g>
-      <style type="text/css">.st0{fill:none;stroke:#FFFFFF;stroke-width:1;}</style>
+      <style type="text/css">
+.st0{fill:none;stroke:#FFFFFF;stroke-width:1;}
+</style>
       <rect x="11.5" y="1.9" class="st0" width="5.7" height="5.7"/>
       <rect x="11.5" y="11.9" class="st0" width="5.7" height="5.7"/>
       <rect x="1.5" y="11.9" class="st0" width="5.7" height="5.7"/>
@@ -45,7 +68,9 @@
     <path d="M12.8645 11.3208H12.0515L11.7633 11.0429C12.7719 9.86964 13.3791 8.34648 13.3791 6.68954C13.3791 2.99485 10.3842 0 6.68954 0C2.99485 0 0 2.99485 0 6.68954C0 10.3842 2.99485 13.3791 6.68954 13.3791C8.34648 13.3791 9.86964 12.7719 11.0429 11.7633L11.3208 12.0515V12.8645L16.4666 18L18 16.4666L12.8645 11.3208ZM6.68954 11.3208C4.12693 11.3208 2.05832 9.25214 2.05832 6.68954C2.05832 4.12693 4.12693 2.05832 6.68954 2.05832C9.25214 2.05832 11.3208 4.12693 11.3208 6.68954C11.3208 9.25214 9.25214 11.3208 6.68954 11.3208Z" fill="white"/>
   </symbol>
   <symbol  id="cart" >
-    <style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}</style>
+    <style type="text/css">
+.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
     <path class="st0" d="M11,18.5c0-3.6,2.9-6.5,6.5-6.5c2,0,3.7,0.9,4.9,2.2L24,8.7l0-0.3c0-0.6-0.5-1.1-1.1-1.1h-5.2l-4.8-6.9
 	C12.7,0.1,12.3,0,12,0s-0.7,0.1-0.9,0.5L6.3,7.4H1.1C0.5,7.4,0,7.8,0,8.4c0,0.1,0,0.2,0,0.3l2.8,9.8C3.1,19.3,3.9,20,4.9,20h6.3
 	C11.1,19.5,11,19,11,18.5z M12,2.7l3.3,4.6H8.7L12,2.7z"/>
