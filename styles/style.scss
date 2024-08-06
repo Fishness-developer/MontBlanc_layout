@@ -18,19 +18,18 @@ body{
 	padding: #{$padding-button}px;	
 }
 
-.icons_svg{
-	width: 30px;
-	height: 18px;
-}
+
 .header{
-	@include block-set(100vw, 120px, 20px 50px, 0, var(--color-green));
-	box-sizing: border-box;
+	@include block-set(100vw, 120px, 20px 0, 0, var(--color-green));
+	display: flex;
 	
 	&__inner{
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		column-gap: 30px;
+		margin: 0 30px;
 	}
 	
 	&__button{
@@ -41,6 +40,8 @@ body{
 		border: 1px solid #fff;
 		display: flex;
 		align-items: center;
+		padding-left: 50px;
+		white-space: nowrap; 
 	}
 	
 	&__button p{
@@ -50,8 +51,80 @@ body{
 	&__input{
 		font-family: var(--font-family-roboto);
 		@include font-face ($font-size-regular*1px, 300, var(--color-white));
-		background: #3FA81F;
+		background: #3FA81F url("../images/svg/search.svg") 20px 50% no-repeat;
 		border: 1px solid rgba(0,0,0,0.2);
+		width: 100%;
+		max-width: 500px;
+		padding-left:50px; 
+	}
+	
+	&__contact{
+		white-space: nowrap; 
+		color: var(--color-white);
+		background: url("../images/svg/phone.svg") 0 50% no-repeat;
+		padding-left: 30px;
+	}
+	
+	&__contact .tel{
+		@include font-face ($font-size-extra*1px, 500, var(--color-white));
+	}
+	
+	&__burger{
+		background: url("../images/svg/burger.svg") no-repeat;
+		width: 24px;
+		height: 16px;
+		border: 0;
+	}
+	
+	.all-goods{
+		background:url( "../images/svg/goods.svg") 20px 50% no-repeat;
+	}
+	.cart{
+		background: url("../images/svg/cart.svg") 20px 50% no-repeat;
 	}
 }
 
+.nav{
+	display: flex;
+	@include block-set(100vw, 60px, 0, 0 auto, var(--color-dark));
+	
+	&__menu{
+		@include block-set(1170px, 60px, 0, 0 auto, none);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 30px;
+		white-space: nowrap; 
+	}
+	
+	&__menu-item a{
+		@include font-face ($font-size-regular*1px, 300, var(--color-white));
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	
+	&__menu-item a:hover{
+		color: var(--color-beige);	 
+  		transition: 1s;
+	}
+	
+	&__menu-item a:not(:hover){
+		transition: 1s;
+	}
+}
+
+.slider{
+	@include block-set(100%, 500px, 0, 0 auto, none);
+	
+	&__items-inner{
+		overflow: hidden;
+		display: flex;
+		justify-content: center
+	}
+	.description{
+		    position: absolute;
+    top: 50%;
+    width: 1170px;
+	}
+ 
+}
