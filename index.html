@@ -3,6 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>Mont Blank</title>
+
+	<script>
+			// Функция для установки куки
+		function setCookie(name, value, days) {
+			let expires = "";
+			if (days) {
+				const date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			console.log(document.cookie =name + "=" +  value + expires);
+			 
+		}
+
+			// Получаем параметры из URL
+			//const urlParams = new URL(window.location.href);
+			const urlParams = new URL('http://site.com?token=1798805276176326656-OopZ0K9glnaLEdOj34ID4xwDQmTj6i&id=1798805276176326656');
+			const token=urlParams.searchParams.get('token');
+			const id = urlParams.searchParams.get('id');
+
+			 // Сохраняем параметры в куки
+			setCookie("token", token, 7); // Кука будет действительна 7 дней
+			setCookie('id', id, 7); 
+	</script>
+
+	
 <script src="scripts/script.js"	defer></script>
 <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
