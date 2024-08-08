@@ -1,5 +1,5 @@
 // Set Cookies
- function setCookie(name, value, days) {
+/* function setCookie(name, value, days) {
 			let expires = "";
 			if (days) {
 				const date = new Date();
@@ -15,4 +15,8 @@
 			const id = urlParams.searchParams.get('id');
 		
 			setCookie("token", token, 7);  
-			setCookie('id', id, 7); 
+			setCookie('id', id, 7); */
+
+
+ 
+		

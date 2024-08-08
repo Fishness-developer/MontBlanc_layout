@@ -1,6 +1,9 @@
 // Scss Document
 $font-size-regular:14;
-$font-size-extra:24;
+$font-size-header-first:60;
+$font-size-header-second:48;
+$font-size-header-third:24;
+$font-size-header-fourth:20;
 $border-radius-button:40;
 $height-button:44;
 $padding-button:0 20;
@@ -8,8 +11,10 @@ $padding-button:0 20;
 :root{
 	--color-white:#FFFFFF;
 	--color-green:#46BB22;
+	--color-green-hover:#4ADC1C;
 	--color-dark:#2C2C2C;
 	--color-beige:#FAE390;
+
 	
 	--border-radius:50px;
 	--border:2px solid var(--color-white);
