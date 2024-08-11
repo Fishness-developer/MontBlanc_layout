@@ -13,9 +13,20 @@
     <p>Все товары</p>
     </button>
     <input class="header__input input"/>
-    <button class="header__button button cart">
-    <p>Корзина</p>
-    </button>
+    <div>
+      <div class="header__cart">
+        <button class="header__button button cart">
+        <p>Корзина</p>
+		<p class="amount-items-null">5</p>
+        </button>
+      </div>
+      <div class="header__drop-cart">
+        <button class="header__button-drop button cart">
+        <p>Корзина</p>
+        <p class="amount-items">5</p>
+        </button>
+      </div>
+    </div>
     <div class="header__contact phone">
       <p class="tel">+972(50) 111-22-44</p>
       <p class="time">с 9.00 до 20.00 без выходных</p>
@@ -53,9 +64,9 @@
         <p class="item-description">Масло оливковое Extra Virgin, Costa d’Oro</p>
         </a>
         <div class="amount">
-          <button data-amount="decrease">-</button>
+          <button data-amount-decrease>-</button>
           <input type="number" value="1" class="amount-input" />
-          <button data-amount="increase">+</button>
+          <button data-amount-increase>+</button>
         </div>
         <button class="section_01__promotions-item-button button" data-cart> В корзину</button>
       </li>
@@ -66,9 +77,9 @@
         <p class="item-description">Чипсы картофельные Классические, San Carlo </p>
         </a>
         <div class="amount">
-          <button data-amount="decrease">-</button>
+          <button data-amount-decrease>-</button>
           <input type="number" value="1" class="amount-input" />
-          <button data-amount="increase">+</button>
+          <button data-amount-increase>+</button>
         </div>
         <button class="section_01__promotions-item-button button" data-cart> В корзину</button>
       </li>
@@ -79,9 +90,9 @@
         <p class="item-description">Тунец полосатый филе-ломтики в масле ж/б, ARTIGIANO</p>
         </a>
         <div class="amount">
-          <button data-amount="decrease">-</button>
+          <button data-amount-decrease>-</button>
           <input type="number" value="1" class="amount-input" />
-          <button data-amount="increase">+</button>
+          <button data-amount-increase>+</button>
         </div>
         <button class="section_01__promotions-item-button button" data-cart> В корзину</button>
       </li>
@@ -92,24 +103,24 @@
         <p class="item-description">Сыр Тет де Муан, LeSuperbe </p>
         </a>
         <div class="amount">
-          <button data-amount="decrease">-</button>
+          <button data-amount-decrease>-</button>
           <input type="number" value="1" class="amount-input" />
-          <button data-amount="increase">+</button>
+          <button data-amount-increase>+</button>
         </div>
         <button class="section_01__promotions-item-button button" data-cart> В корзину</button>
       </li>
-      <li class="section_01__promotions-item" data-product-name="Ketchup Mutti"> <a href="/">
+      <li class="section_01__promotions-item" data-product-name="Ketchup Mutti"> <a href="/" class="item_link">
         <div class="item-image"><img src="images/products/ketchup.jpg" width="149" height="170" alt=""/></div>
         <p class="price"><span class="extra">18</span> ₪</p>
         <p class="offer">23₪<span class="percent">-15%</span></p>
         <p class="item-description">Кетчуп томатный, Mutti </p>
         </a>
         <div class="amount">
-          <button data-amount="decrease">-</button>
+          <button data-amount-decrease>-</button>
           <input type="number" value="1" class="amount-input" />
-          <button data-amount="increase">+</button>
+          <button data-amount-increase>+</button>
         </div>
-        <button class="section_01__promotions-item-button button" data-cart> В корзину</button>
+        <button class="section_01__promotions-item-button button" data-cart > В корзину</button>
       </li>
     </ul>
   </section>

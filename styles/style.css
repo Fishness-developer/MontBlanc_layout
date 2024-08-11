@@ -400,6 +400,16 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     align-items: center;
     column-gap: 30px;
     margin: 0 30px; }
+  .header__drop-cart {
+    width: 500px;
+    height: auto;
+    padding: 30px;
+    margin: 0 auto 0 -394px;
+    background: var(--color-dark);
+    position: absolute;
+    top: 28px;
+    display: none;
+    justify-content: flex-end; }
   .header__button {
     font-family: var(--font-family-roboto);
     background: none;
@@ -408,8 +418,41 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     align-items: center;
     padding-left: 50px;
     white-space: nowrap; }
-  .header__button p {
+  .header__button p, .header__button-drop p {
     margin-top: 3px; }
+  .header__button-drop {
+    font-family: var(--font-family-roboto);
+    background-color: var(--color-green);
+    border: 0;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    white-space: nowrap;
+    border: 1px solid var(--color-green); }
+  .header .amount-items {
+    width: auto;
+    height: auto;
+    padding: 3px;
+    margin: 0 auto;
+    background: var(--color-green);
+    position: absolute;
+    border-radius: 20px;
+    top: 55px;
+    right: 132px;
+    font-size: 11px;
+    line-height: 10px; }
+  .header .amount-items-null {
+    width: auto;
+    height: auto;
+    padding: 3px;
+    margin: 0 auto;
+    background: var(--color-green);
+    position: absolute;
+    border-radius: 20px;
+    font-size: 11px;
+    line-height: 10px;
+    margin-left: -29px;
+    margin-top: 22px; }
   .header__input {
     font-family: var(--font-family-roboto);
     font-size: 14px;
@@ -439,7 +482,9 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   .header .all-goods {
     background: url("../images/svg/goods.svg") 20px 50% no-repeat; }
   .header .cart {
-    background: url("../images/svg/cart.svg") 20px 50% no-repeat; }
+    background-image: url("../images/svg/cart.svg");
+    background-repeat: no-repeat;
+    background-position: 20px 50%; }
 
 .nav {
   display: flex;
@@ -501,7 +546,8 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     padding: 15px 30px; }
   .slider__items-inner .description {
     position: absolute;
-    top: 35%;
+    margin-top: 120px;
+    padding-left: 30px;
     width: 1170px; }
   .slider__items-inner h2 {
     color: var(--color-white); }
