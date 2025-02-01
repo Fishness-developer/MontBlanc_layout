@@ -379,6 +379,12 @@ h4 {
 a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover), .section_01__promotions-item-button:hover, .section_01__promotions-item-button:not(:hover) {
   transition: .5s; }
 
+.padding_right_50 {
+  padding-right: 50px; }
+
+.padding_left_50 {
+  padding-left: 50px; }
+
 .button, input {
   border-radius: 40px;
   height: 44px;
@@ -610,7 +616,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 .section_01 {
   width: 100%;
   height: auto;
-  padding: 30px 0;
+  padding: 80px 0;
   margin: 0 auto;
   background: url("../images/bg_fon1.jpg") repeat;
   display: flex;
@@ -624,7 +630,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   	}*/ }
   .section_01 h2 {
     color: var(--color-green);
-    margin: 30px;
+    margin: 0 0 30px 0;
     text-align: center; }
   .section_01__promotions {
     width: 100%;
@@ -716,3 +722,36 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     color: var(--color-green);
     font-size: 18px;
     font-weight: 600; }
+
+.section_02 {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0 auto;
+  background: var(--color-green); }
+  .section_02__banner.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap; }
+  .section_02__banner.container img {
+    width: 100%;
+    height: auto; }
+  .section_02__banner.container .inner_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right; }
+  .section_02__banner.container .inner_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left; }
+  .section_02__banner.container .text {
+    position: absolute;
+    width: 50%;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-white);
+    line-height: 36px;
+    box-sizing: border-box;
+    text-transform: uppercase; }

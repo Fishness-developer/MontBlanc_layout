@@ -272,13 +272,13 @@
 }
 
 .section_01{
-	@include block-set(100%, auto, 30px 0, 0 auto, url("../images/bg_fon1.jpg") repeat);
+	@include block-set(100%, auto, 80px 0, 0 auto, url("../images/bg_fon1.jpg") repeat);
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	h2{
 		color: var(--color-green);
-		margin: 30px;
+		margin: 0 0 30px 0;
 		text-align: center;
 	}
 	&__promotions{
@@ -392,4 +392,44 @@
 	}
 
  
+}
+
+
+.section_02{
+	
+			@include block-set(100%, auto, 0, 0 auto, var(--color-green));
+	
+	&__banner.container{
+		display: flex;
+		justify-content: center;
+		flex-wrap: nowrap
+	}
+	&__banner.container img{
+		width: 100%;
+		height: auto;
+	}
+	
+	&__banner.container .inner_left{
+		    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: right;
+	}
+	&__banner.container .inner_right{
+		    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+	}
+	
+	&__banner.container .text{
+		position: absolute;
+		width: 50%;
+		@include font-face ($font-size-header-third*1px, 600, var(--color-white));
+		box-sizing: border-box;
+		text-transform: uppercase;
+		
+	}
+	
+	
 }

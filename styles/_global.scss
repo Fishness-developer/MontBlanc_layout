@@ -31,3 +31,11 @@ h4{
 a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover),.section_01__promotions-item-button:hover,.section_01__promotions-item-button:not(:hover){
 	transition: .5s;
 }
+
+.padding_right_50{
+	padding-right: 50px;
+}
+
+.padding_left_50{
+	padding-left: 50px;
+}
