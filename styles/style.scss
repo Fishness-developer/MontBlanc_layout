@@ -52,10 +52,14 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 	&__inner{
 		width: 100%;
 		display: flex;
-		justify-content: space-between;
+		justify-content: right;
 		align-items: center;
-		column-gap: 30px;
+		column-gap: 50px;
 		margin: 0 30px;
+		 
+	}
+	&__logo{
+flex-grow:1;
 	}
 	
 	&__drop-cart{
@@ -67,11 +71,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 		 
 	}
 	
- 
-	
-	
- 
-	
+
 	&__button{
 		font-family: var(--font-family-roboto);
 		background: none;
@@ -196,7 +196,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 }
 
 .slider{
-	@include block-set(100%, 500px, 0, 0 auto, var(--color-dark));
+	@include block-set(100%, 500px, 0, 0 auto, var(--color-black));
 	display: flex;
 	
 	&__items{
@@ -206,7 +206,12 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 	&__items-inner{
 		overflow: hidden;
 		display: flex;
-		justify-content: center
+		justify-content: center;
+		align-items: center;
+	}
+	
+		&__items-inner img{
+opacity: .7;
 	}
 	
 	&__items-inner-button{
@@ -221,9 +226,17 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 	
 	&__items-inner .description{
 		position: absolute;
-		margin-top: 120px;
-		padding-left: 30px;
-		width: colums(12);
+		max-width: colums(12);
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+	&__items-inner .description .text{
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 300;
+		max-width: colums(8);
 	}
 	
 	&__items-inner h2{
@@ -245,7 +258,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 }
 
 .section_01{
-	@include block-set(100%, auto, 30px 0, 0 auto, url("../images/bg_fon1.jpg") no-repeat);
+	@include block-set(100%, auto, 30px 0, 0 auto, url("../images/bg_fon1.jpg") repeat);
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -259,7 +272,8 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 		display: flex;
 		justify-content: center;
 		align-items: stretch;
-		column-gap: 30px;
+		gap: 30px;
+		flex-wrap: wrap;
 	}
 	&__promotions-item{
 		width: colums(3);

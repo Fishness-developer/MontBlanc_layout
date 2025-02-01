@@ -331,6 +331,7 @@ textarea {
   --color-green-hover:#4ADC1C;
   --color-dark:#2C2C2C;
   --color-beige:#FAE390;
+  --color-black:#000000;
   --border-radius:50px;
   --border:2px solid var(--color-white);
   --font-family-roboto:"Roboto", sans-serif;
@@ -396,10 +397,12 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   .header__inner {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
-    column-gap: 30px;
+    column-gap: 50px;
     margin: 0 30px; }
+  .header__logo {
+    flex-grow: 1; }
   .header__drop-cart {
     width: 500px;
     height: auto;
@@ -530,14 +533,17 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   height: 500px;
   padding: 0;
   margin: 0 auto;
-  background: var(--color-dark);
+  background: var(--color-black);
   display: flex; }
   .slider__items {
     overflow: hidden; }
   .slider__items-inner {
     overflow: hidden;
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center; }
+  .slider__items-inner img {
+    opacity: .7; }
   .slider__items-inner-button {
     background: var(--color-green);
     padding: 15px 30px; }
@@ -546,9 +552,16 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     padding: 15px 30px; }
   .slider__items-inner .description {
     position: absolute;
-    margin-top: 120px;
-    padding-left: 30px;
-    width: 1170px; }
+    max-width: 1170px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; }
+  .slider__items-inner .description .text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    max-width: 770px; }
   .slider__items-inner h2 {
     color: var(--color-white); }
   .slider__items-inner p {
@@ -567,7 +580,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   height: auto;
   padding: 30px 0;
   margin: 0 auto;
-  background: url("../images/bg_fon1.jpg") no-repeat;
+  background: url("../images/bg_fon1.jpg") repeat;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -590,7 +603,8 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     display: flex;
     justify-content: center;
     align-items: stretch;
-    column-gap: 30px; }
+    gap: 30px;
+    flex-wrap: wrap; }
   .section_01__promotions-item {
     width: 270px;
     padding: 30px;
