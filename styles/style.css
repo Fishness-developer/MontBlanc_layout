@@ -337,6 +337,9 @@ textarea {
   --font-family-roboto:"Roboto", sans-serif;
   --section-padding-y:50px; }
 
+html {
+  font-size: 62.5%; }
+
 body {
   font-family: var(--font-family-roboto);
   font-size: 14px;
@@ -393,16 +396,40 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   padding: 20px 0;
   margin: 0;
   background: var(--color-green);
-  display: flex; }
+  display: flex;
+  padding: 0 30px;
+  box-sizing: border-box; }
   .header__inner {
     width: 100%;
     display: flex;
     justify-content: right;
     align-items: center;
-    column-gap: 50px;
-    margin: 0 30px; }
-  .header__logo {
+    column-gap: 50px; }
+  .header__menu.services {
     flex-grow: 1; }
+  .header__menu.services ul {
+    display: flex;
+    justify-content: left;
+    gap: 30px;
+    margin: 0 50xp; }
+  .header__menu.services ul li a {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-white);
+    line-height: 21px;
+    text-transform: uppercase;
+    text-decoration: none; }
+  .header__menu.services a::after {
+    content: "";
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 1px;
+    background: var(--color-white); }
+  .header__menu.services a:hover::after {
+    width: 100%; }
   .header__drop-cart {
     width: 500px;
     height: auto;
@@ -467,12 +494,17 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     width: 100%;
     max-width: 500px;
     padding-left: 50px; }
-  .header__contact {
+  .header__contact.phone {
     white-space: nowrap;
     color: var(--color-white);
     background: url("../images/svg/phone.svg") 0 50% no-repeat;
     padding-left: 30px; }
-  .header__contact .tel {
+  .header__contact.time {
+    white-space: nowrap;
+    color: var(--color-white);
+    background: url("../images/svg/mdi_clock-outline.svg") 0 50% no-repeat;
+    padding-left: 30px; }
+  .header__contact.phone .tel, .header__contact.time .tel {
     font-size: 24px;
     font-weight: 500;
     color: var(--color-white);
@@ -540,7 +572,7 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   .slider__items-inner {
     overflow: hidden;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center; }
   .slider__items-inner img {
     opacity: .7; }
@@ -552,16 +584,16 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     padding: 15px 30px; }
   .slider__items-inner .description {
     position: absolute;
-    max-width: 1170px;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center; }
+    text-align: left;
+    margin: 0 100px; }
   .slider__items-inner .description .text {
     font-size: 16px;
     line-height: 24px;
-    font-weight: 300;
-    max-width: 770px; }
+    font-weight: 300; }
   .slider__items-inner h2 {
     color: var(--color-white); }
   .slider__items-inner p {
@@ -645,20 +677,20 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     padding: 5px;
     font-weight: 600; }
   .section_01__promotions-item-button {
-    width: 130px;
+    width: auto;
     height: 40px;
-    padding: 0 20px 0 40px;
+    padding: auto;
     margin: 0 auto;
-    background: var(--color-green) url("../images/svg/cart_small.svg") 10% 50% no-repeat;
+    background: var(--color-green) 10% 50% no-repeat;
     border: 0;
     font-size: 12px;
-    font-weight: 500; }
+    font-weight: 600; }
   .section_01__promotions-item-button:hover {
-    width: 130px;
+    width: auto;
     height: 40px;
-    padding: 0 20px 0 40px;
+    padding: auto;
     margin: 0 auto;
-    background: var(--color-green-hover) url("../images/svg/cart_small.svg") 10% 50% no-repeat; }
+    background: var(--color-green-hover) 10% 50% no-repeat; }
   .section_01__promotions-item .amount {
     margin: 10px 0; }
   .section_01__promotions-item .amount-input {

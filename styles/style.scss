@@ -3,36 +3,8 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
+@import 'global';
 
-
-
-body{
-	font-family: var(--font-family-roboto);
-	@include font-face ($font-size-regular*1px, 300, var(--color-dark));
-	height: 100vh;
-	
-}
-
-h1{
-	@include font-face ($font-size-header-first*1px, 900, var(--color-dark));
-	text-transform: uppercase;
-}
-h2{
-	@include font-face ($font-size-header-second*1px, 700, var(--color-dark));
-	text-transform: uppercase;
-}
-h3{
-	@include font-face ($font-size-header-third*1px, 700, var(--color-dark));
-	text-transform: uppercase;
-}
-h4{
-	@include font-face ($font-size-header-fourth*1px, 500, var(--color-dark));
-	text-transform: uppercase;
-}
-
-a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover),.section_01__promotions-item-button:hover,.section_01__promotions-item-button:not(:hover){
-	transition: .5s;
-}
 
 
 .button, input{
@@ -48,6 +20,8 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 .header{
 	@include block-set(100%, 120px, 20px 0, 0, var(--color-green));
 	display: flex;
+	padding: 0 30px;
+	box-sizing: border-box;
 	
 	&__inner{
 		width: 100%;
@@ -55,12 +29,43 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 		justify-content: right;
 		align-items: center;
 		column-gap: 50px;
-		margin: 0 30px;
+		
 		 
 	}
 	&__logo{
-flex-grow:1;
+//		flex-grow:1;
 	}
+	&__menu.services{
+		flex-grow:1;
+	}
+	&__menu.services ul{
+		display: flex;
+		justify-content: left;
+		gap:30px;
+		margin: 0 50xp;
+		
+	}
+	&__menu.services ul li a{
+		@include font-face ($font-size-regular*1px, 300, var(--color-white));
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	
+	&__menu.services a::after{
+		content: "";
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 0;
+		height: 1px;
+		background: var(--color-white);
+	}
+		&__menu.services a:hover::after{
+		width: 100%;
+	}
+	
+	
 	
 	&__drop-cart{
 		@include block-set(500px, auto, 30px, 0 auto 0 -394px, var(--color-dark));
@@ -128,14 +133,20 @@ flex-grow:1;
 		padding-left:50px; 
 	}
 	
-	&__contact{
+	&__contact.phone{
 		white-space: nowrap; 
 		color: var(--color-white);
 		background: url("../images/svg/phone.svg") 0 50% no-repeat;
 		padding-left: 30px;
 	}
+		&__contact.time{
+		white-space: nowrap; 
+		color: var(--color-white);
+		background: url("../images/svg/mdi_clock-outline.svg") 0 50% no-repeat;
+		padding-left: 30px;
+	}
 	
-	&__contact .tel{
+	&__contact.phone .tel, &__contact.time .tel {
 		@include font-face ($font-size-header-third*1px, 500, var(--color-white));
 	}
 	
@@ -206,12 +217,13 @@ flex-grow:1;
 	&__items-inner{
 		overflow: hidden;
 		display: flex;
-		justify-content: center;
+		justify-content: left;
 		align-items: center;
+		
 	}
 	
 		&__items-inner img{
-opacity: .7;
+		opacity: .7;
 	}
 	
 	&__items-inner-button{
@@ -226,17 +238,19 @@ opacity: .7;
 	
 	&__items-inner .description{
 		position: absolute;
-		max-width: colums(12);
+		max-width: 100%;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		text-align: center;
+		text-align: left;
+		margin: 0 100px
 	}
 	&__items-inner .description .text{
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: 300;
-		max-width: colums(8);
+		 
+		
 	}
 	
 	&__items-inner h2{
@@ -332,15 +346,15 @@ opacity: .7;
 	}
 	
 	&__promotions-item-button{
-		@include block-set(130px, 40px, 0 20px 0 40px, 0 auto, var(--color-green) url("../images/svg/cart_small.svg") 10% 50% no-repeat);
+		@include block-set(auto, 40px, auto, 0 auto, var(--color-green) 10% 50% no-repeat);
 		border: 0;
 		font-size: 12px;
-		font-weight: 500;
+		font-weight: 600;
 		 
 	}
 	
 	&__promotions-item-button:hover{
-		@include block-set(130px, 40px, 0 20px 0 40px, 0 auto, var(--color-green-hover) url("../images/svg/cart_small.svg") 10% 50% no-repeat); 
+		@include block-set(auto, 40px, auto, 0 auto, var(--color-green-hover) 10% 50% no-repeat); 
 	}
 	
 	&__promotions-item .amount{
