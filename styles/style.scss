@@ -3,8 +3,36 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
-@import 'global';
 
+
+
+body{
+	font-family: var(--font-family-roboto);
+	@include font-face ($font-size-regular*1px, 300, var(--color-dark));
+	height: 100vh;
+	
+}
+
+h1{
+	@include font-face ($font-size-header-first*1px, 900, var(--color-dark));
+	text-transform: uppercase;
+}
+h2{
+	@include font-face ($font-size-header-second*1px, 700, var(--color-dark));
+	text-transform: uppercase;
+}
+h3{
+	@include font-face ($font-size-header-third*1px, 700, var(--color-dark));
+	text-transform: uppercase;
+}
+h4{
+	@include font-face ($font-size-header-fourth*1px, 500, var(--color-dark));
+	text-transform: uppercase;
+}
+
+a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover),.section_01__promotions-item-button:hover,.section_01__promotions-item-button:not(:hover){
+	transition: .5s;
+}
 
 
 .button, input{
@@ -20,52 +48,15 @@
 .header{
 	@include block-set(100%, 120px, 20px 0, 0, var(--color-green));
 	display: flex;
-	padding: 0 30px;
-	box-sizing: border-box;
 	
 	&__inner{
 		width: 100%;
 		display: flex;
-		justify-content: right;
+		justify-content: space-between;
 		align-items: center;
-		column-gap: 50px;
-		
-		 
+		column-gap: 30px;
+		margin: 0 30px;
 	}
-	&__logo{
-//		flex-grow:1;
-	}
-	&__menu.services{
-		flex-grow:1;
-	}
-	&__menu.services ul{
-		display: flex;
-		justify-content: left;
-		gap:30px;
-		margin: 0 50xp;
-		
-	}
-	&__menu.services ul li a{
-		@include font-face ($font-size-regular*1px, 300, var(--color-white));
-		text-transform: uppercase;
-		text-decoration: none;
-	}
-	
-	&__menu.services a::after{
-		content: "";
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 0;
-		height: 1px;
-		background: var(--color-white);
-	}
-		&__menu.services a:hover::after{
-		width: 100%;
-	}
-	
-	
 	
 	&__drop-cart{
 		@include block-set(500px, auto, 30px, 0 auto 0 -394px, var(--color-dark));
@@ -76,7 +67,11 @@
 		 
 	}
 	
-
+ 
+	
+	
+ 
+	
 	&__button{
 		font-family: var(--font-family-roboto);
 		background: none;
@@ -133,20 +128,14 @@
 		padding-left:50px; 
 	}
 	
-	&__contact.phone{
+	&__contact{
 		white-space: nowrap; 
 		color: var(--color-white);
 		background: url("../images/svg/phone.svg") 0 50% no-repeat;
 		padding-left: 30px;
 	}
-		&__contact.time{
-		white-space: nowrap; 
-		color: var(--color-white);
-		background: url("../images/svg/mdi_clock-outline.svg") 0 50% no-repeat;
-		padding-left: 30px;
-	}
 	
-	&__contact.phone .tel, &__contact.time .tel {
+	&__contact .tel{
 		@include font-face ($font-size-header-third*1px, 500, var(--color-white));
 	}
 	
@@ -207,7 +196,7 @@
 }
 
 .slider{
-	@include block-set(100%, 500px, 0, 0 auto, var(--color-black));
+	@include block-set(100%, 500px, 0, 0 auto, var(--color-dark));
 	display: flex;
 	
 	&__items{
@@ -217,13 +206,7 @@
 	&__items-inner{
 		overflow: hidden;
 		display: flex;
-		justify-content: left;
-		align-items: center;
-		
-	}
-	
-		&__items-inner img{
-		opacity: .7;
+		justify-content: center
 	}
 	
 	&__items-inner-button{
@@ -238,19 +221,9 @@
 	
 	&__items-inner .description{
 		position: absolute;
-		max-width: 100%;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		text-align: left;
-		margin: 0 100px
-	}
-	&__items-inner .description .text{
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: 300;
-		 
-		
+		margin-top: 120px;
+		padding-left: 30px;
+		width: colums(12);
 	}
 	
 	&__items-inner h2{
@@ -272,13 +245,13 @@
 }
 
 .section_01{
-	@include block-set(100%, auto, 80px 0, 0 auto, url("../images/bg_fon1.jpg") repeat);
+	@include block-set(100%, auto, 30px 0, 0 auto, url("../images/bg_fon1.jpg") no-repeat);
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	h2{
 		color: var(--color-green);
-		margin: 0 0 30px 0;
+		margin: 30px;
 		text-align: center;
 	}
 	&__promotions{
@@ -286,8 +259,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: stretch;
-		gap: 30px;
-		flex-wrap: wrap;
+		column-gap: 30px;
 	}
 	&__promotions-item{
 		width: colums(3);
@@ -346,15 +318,15 @@
 	}
 	
 	&__promotions-item-button{
-		@include block-set(auto, 40px, auto, 0 auto, var(--color-green) 10% 50% no-repeat);
+		@include block-set(130px, 40px, 0 20px 0 40px, 0 auto, var(--color-green) url("../images/svg/cart_small.svg") 10% 50% no-repeat);
 		border: 0;
 		font-size: 12px;
-		font-weight: 600;
+		font-weight: 500;
 		 
 	}
 	
 	&__promotions-item-button:hover{
-		@include block-set(auto, 40px, auto, 0 auto, var(--color-green-hover) 10% 50% no-repeat); 
+		@include block-set(130px, 40px, 0 20px 0 40px, 0 auto, var(--color-green-hover) url("../images/svg/cart_small.svg") 10% 50% no-repeat); 
 	}
 	
 	&__promotions-item .amount{
@@ -392,44 +364,4 @@
 	}
 
  
-}
-
-
-.section_02{
-	
-			@include block-set(100%, auto, 0, 0 auto, var(--color-green));
-	
-	&__banner.container{
-		display: flex;
-		justify-content: center;
-		flex-wrap: nowrap
-	}
-	&__banner.container img{
-		width: 100%;
-		height: auto;
-	}
-	
-	&__banner.container .inner_left{
-		    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: right;
-	}
-	&__banner.container .inner_right{
-		    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-	}
-	
-	&__banner.container .text{
-		position: absolute;
-		width: 50%;
-		@include font-face ($font-size-header-third*1px, 600, var(--color-white));
-		box-sizing: border-box;
-		text-transform: uppercase;
-		
-	}
-	
-	
 }
