@@ -376,6 +376,13 @@ h4 {
   line-height: 30px;
   text-transform: uppercase; }
 
+h5 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-beige);
+  line-height: 24px;
+  text-transform: uppercase; }
+
 a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover), .section_01__promotions-item-button:hover, .section_01__promotions-item-button:not(:hover) {
   transition: .5s; }
 
@@ -385,6 +392,13 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 .padding_left_50 {
   padding-left: 50px; }
 
+@media (max-width: 1170px) {
+  html {
+    font-size: 50%; }
+
+  .header__contact.phone, .header__contact.time {
+    display: none !important;
+    background: #000; } }
 .button,
 input {
   border-radius: 40px;
@@ -400,11 +414,10 @@ input {
 .header {
   width: 100%;
   height: 120px;
-  padding: 20px 0;
+  padding: 0 30px;
   margin: 0;
   background: var(--color-green);
   display: flex;
-  padding: 0 30px;
   box-sizing: border-box; }
   .header__inner {
     width: 100%;
@@ -750,19 +763,19 @@ input {
   .section_02__banner.container .text {
     position: absolute;
     width: 50%;
-    font-size: 24px;
+    font-size: 3rem;
     font-weight: 600;
     color: var(--color-white);
-    line-height: 36px;
+    line-height: 4.5rem;
     box-sizing: border-box;
     text-transform: uppercase; }
 
 .section_03 {
   width: 100%;
   height: auto;
-  padding: 80px 0;
+  padding: 50px 0 50px 0;
   margin: 0 auto;
-  background: url("../images/bg_fon_2.png") repeat;
+  background: url("../images/bg_fon_2.png") 0 100% no-repeat;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -776,10 +789,18 @@ input {
     padding: 0;
     margin: 0 30px;
     background: none;
-    max-width: 1170px;
+    width: 1170px;
     display: flex;
     justify-content: center;
     gap: 30px; }
+    .section_03__info h3 {
+      margin: 20px 0 0 0; }
+    .section_03__info .sub_text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-green);
+      text-transform: uppercase;
+      margin-bottom: 10px; }
 
 .section_04 {
   width: 100%;
@@ -789,6 +810,36 @@ input {
   background: var(--color-green);
   display: flex;
   justify-content: center; }
+  .section_04__container {
+    display: flex;
+    width: 1170px;
+    justify-content: space-between;
+    gap: 50px;
+    height: 100%;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 21px;
+    text-transform: uppercase; }
+  .section_04__container.phone {
+    background: url("../images/svg/phone_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px; }
+  .section_04__container.email {
+    background: url("../images/svg/email_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px; }
+  .section_04__container.support {
+    background: url("../images/svg/support_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px; }
+  .section_04 span.black {
+    color: var(--color-dark);
+    font-weight: 600; }
 
 .footer {
   width: 100%;
@@ -797,4 +848,36 @@ input {
   margin: 0 auto;
   background: var(--color-dark);
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  color: var(--color-white); }
+  .footer__container {
+    width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px; }
+  .footer__container .tel {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-white);
+    line-height: 36px;
+    margin-top: 20px; }
+  .footer__container .time {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--color-beige);
+    line-height: 24px; }
+  .footer__container a {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-white);
+    line-height: 21px;
+    text-transform: none;
+    text-decoration: none;
+    margin: 5px 0;
+    display: inline-flex; }
+  .footer__container a:hover {
+    color: var(--color-beige); }
+  .footer__container h5 {
+    margin-bottom: 10px; }

@@ -4,6 +4,7 @@
 @import "variables";
 @import "mixins";
 @import "global";
+@import "media";
 
 .button,
 input {
@@ -16,9 +17,9 @@ input {
 }
 
 .header {
-  @include block-set(100%, 120px, 20px 0, 0, var(--color-green));
+  @include block-set(100%, 120px, 0 30px, 0, var(--color-green));
   display: flex;
-  padding: 0 30px;
+  
   box-sizing: border-box;
 
   &__inner {
@@ -424,61 +425,125 @@ input {
   &__banner.container .text {
     position: absolute;
     width: 50%;
-    @include font-face($font-size-header-third * 1px, 600, var(--color-white));
+    @include font-face(3rem, 600, var(--color-white));
     box-sizing: border-box;
     text-transform: uppercase;
   }
 }
 
-.section_03{
-	  @include block-set(
+.section_03 {
+  @include block-set(
     100%,
     auto,
-    80px 0,
+    50px 0 50px 0,
     0 auto,
-    url("../images/bg_fon_2.png") repeat
+    url("../images/bg_fon_2.png") 0 100% no-repeat
   );
   display: flex;
   justify-content: center;
   flex-direction: column;
-	align-items: center;
-	
-	 h2 {
+  align-items: center;
+
+  h2 {
     margin: 0 0 30px 0;
     text-align: center;
   }
-	
-	&__info{
-		@include block-set(auto, auto, 0, 0 30px, none);
-		max-width: 1170px;
-		display: flex;
-		justify-content: center;
-		
-		gap:30px;
-		
-	}
+
+  &__info {
+    @include block-set(auto, auto, 0, 0 30px, none);
+    width: 1170px;
+    display: flex;
+    justify-content: center;
+
+    gap: 30px;
+    h3 {
+      margin: 20px 0 0 0;
+    }
+    .sub_text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+  }
 }
 
-.section_04{
-	@include block-set(
-    100%,
-    100px,
-    0,
-    0 auto,
-    var(--color-green)
-  );
+.section_04 {
+  @include block-set(100%, 100px, 0, 0 auto, var(--color-green));
   display: flex;
   justify-content: center;
+
+  &__container {
+    display: flex;
+    width: 1170px;
+    justify-content: space-between;
+    gap: 50px;
+    height: 100%;
+    align-items: center;
+    @include font-face($font-size-regular * 1px, 400, var(--color-white));
+    text-transform: uppercase;
+  }
+
+  &__container.phone {
+    background: url("../images/svg/phone_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  &__container.email {
+    background: url("../images/svg/email_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  &__container.support {
+    background: url("../images/svg/support_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  span.black {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
 }
 
-.footer{
-	@include block-set(
-    100%,
-    auto,
-    50px 0,
-    0 auto,
-    var(--color-dark)
-  );
+.footer {
+  @include block-set(100%, auto, 50px 0, 0 auto, var(--color-dark));
   display: flex;
   justify-content: center;
+  color: var(--color-white);
+
+  &__container {
+    width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+  }
+  &__container .tel {
+    @include font-face($font-size-header-third * 1px, 500, var(--color-white));
+    margin-top: 20px;
+  }
+  &__container .time {
+    @include font-face($font-size-header-fifth * 1px, 300, var(--color-beige));
+  }
+
+  &__container a {
+    @include font-face($font-size-regular * 1px, 300, var(--color-white));
+    text-transform: none;
+    text-decoration: none;
+    margin: 5px 0;
+    display: inline-flex;
+  }
+
+  &__container a:hover {
+    color: var(--color-beige);
+  }
+
+  &__container h5 {
+    margin-bottom: 10px;
+  }
 }
