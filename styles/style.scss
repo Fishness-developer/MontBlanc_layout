@@ -173,7 +173,7 @@ input {
   }
 
   &__menu-item a {
-    @include font-face($font-size-regular * 1px, 300, var(--color-white));
+    @include font-face($font-size-regular * .1rem, 300, var(--color-white));
     text-transform: uppercase;
     text-decoration: none;
   }

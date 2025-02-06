@@ -1,25 +1,73 @@
 // Scss Document
-@media (min-width: $width-mobile) and (max-width: $width-desktop) {
+@media (max-width: $width-desktop) {
   html {
     font-size: 50%;
+  }
+  .header__inner {
+    gap: 20px;
   }
   .header__contact.phone, .header__contact.time {
     display: none !important;
   }
-  .section_03__info{
+  .section_03__info {
     width: auto !important;
     flex-wrap: wrap;
   }
-  .section_04{
-    display: none!important;
+  .section_04 {
+    display: none !important;
   }
-  .footer__container{
+  .footer__container {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr)!important;
+    grid-template-columns: repeat(2, 1fr) !important;
     grid-template-rows: repeat(2, 1fr) !important;
     gap: 30px !important;
-    margin: 0 50px!important;
+    margin: 0 50px !important;
   }
   .section_02__banner.container .text {
-    font-size: 2rem!important;}
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: $width-mobile-until) {
+  .header {
+    height: auto !important;
+    padding: 30px 0 !important;
+  }
+  .header__inner {
+    flex-direction: column;
+  }
+  .nav__menu {
+    gap: 10px !important;
+  }
+  .section_02__banner.container {
+    flex-wrap: wrap !important;
+  }
+  .section_02__banner.container .text {
+    width: auto !important;
+    line-height: inherit !important;
+  }
+
+  .section_02__banner.container .inner_left {
+    justify-content: right !important;
+    margin-right: 0 !important;
+  }
+  .padding_right_50 {
+    padding-right: 10px !important;
+  }
+
+  .section_02__banner.container .inner_right {
+    justify-content: left !important;
+    margin-left: 0 !important;
+  }
+  .padding_left_50 {
+    padding-left: 10px !important;
+  }
+
+  .footer__container {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr) !important;
+    grid-template-rows: repeat(1, 1fr) !important;
+    gap: 30px !important;
+    margin: 0 50px !important;
+  }
 }
