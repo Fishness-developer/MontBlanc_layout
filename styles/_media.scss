@@ -1,10 +1,25 @@
 // Scss Document
-@media (max-width: 1170px ){
+@media (min-width: $width-mobile) and (max-width: $width-desktop) {
   html {
     font-size: 50%;
   }
-	.header__contact.phone, .header__contact.time{
-		display: none!important;
-		background: #000
-	}
+  .header__contact.phone, .header__contact.time {
+    display: none !important;
+  }
+  .section_03__info{
+    width: auto !important;
+    flex-wrap: wrap;
+  }
+  .section_04{
+    display: none!important;
+  }
+  .footer__container{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr)!important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 30px !important;
+    margin: 0 50px!important;
+  }
+  .section_02__banner.container .text {
+    font-size: 2rem!important;}
 }
