@@ -37,17 +37,20 @@ const blockAmount = document.querySelectorAll('.amount')
 	})
 
 const buttonCart = document.querySelector(".header__cart")
-const buttonDropCart = document.querySelector(".header__drop-cart")
- 
- buttonCart.addEventListener('click', (e)=>{
-	 buttonDropCart.remove.style='display:none'
-	 buttonDropCart.style.cssText='display:flex'
- })
-
- buttonDropCart.addEventListener('click', (e)=>{
-	 buttonDropCart.remove.style='display:flex'
-	 buttonDropCart.style.cssText='display:none'
- })
+const buttonDropCart = document.querySelector(".header__drop-cart-container")
+buttonCart.addEventListener('click', (e)=>{
+ buttonDropCart.classList.toggle("flex")
+	buttonCart.classList.toggle("header__button-drop")
+})
+ // buttonCart.addEventListener('click', (e)=>{
+	//  buttonDropCart.remove.style='display:none'
+	//  buttonDropCart.style.cssText='display:flex'
+ // })
+ //
+ // buttonDropCart.addEventListener('click', (e)=>{
+	//  buttonDropCart.remove.style='display:flex'
+	//  buttonDropCart.style.cssText='display:none'
+ // })
 
  
 

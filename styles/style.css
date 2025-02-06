@@ -443,6 +443,10 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   padding-left: 50px;
 }
 
+.flex {
+  display: flex !important;
+}
+
 @media (max-width: 1280px) {
   html {
     font-size: 50%;
@@ -510,6 +514,19 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     gap: 30px !important;
     margin: 0 50px !important;
   }
+  .header__cart_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .header__drop-cart {
+    left: 0 !important;
+    right: 0 !important;
+    min-width: auto !important;
+  }
+  .header__drop-cart-container {
+    position: inherit !important;
+  }
 }
 .button,
 input {
@@ -570,16 +587,64 @@ input {
 .header__menu.services a:hover::after {
   width: 100%;
 }
+.header__cart {
+  position: relative;
+  z-index: 100;
+}
+.header__drop-cart-container {
+  position: relative;
+  display: none;
+  z-index: 10;
+}
 .header__drop-cart {
-  width: 500px;
+  width: auto;
   height: auto;
-  padding: 30px;
-  margin: 0 auto 0 -394px;
+  padding: 0px;
+  margin: -55px 0 0 0;
   background: var(--color-dark);
   position: absolute;
-  top: 28px;
-  display: none;
-  justify-content: flex-end;
+  right: -10px;
+  min-width: 450px;
+}
+.header__drop-cart p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-black);
+  line-height: 21px;
+}
+.header__drop-cart p.cart-amount {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-beige);
+  line-height: 30px;
+}
+.header__drop-cart .cart-item-container {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin: 0;
+  background: var(--color-white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.header__drop-cart .drop-cart-inner {
+  padding: 10px 20px;
+}
+.header__drop-cart .drop-cart-inner p.cart_header {
+  color: var(--color-white);
+}
+.header__drop-cart .cart-order-product {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.header__drop-cart .cart-order-product img {
+  width: 30px;
+  height: auto;
 }
 .header__button {
   font-family: var(--font-family-roboto);
@@ -594,13 +659,9 @@ input {
   margin-top: 3px;
 }
 .header__button-drop {
-  font-family: var(--font-family-roboto);
   background-color: var(--color-green);
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
+  border-radius: 40px;
   white-space: nowrap;
-  border: 1px solid var(--color-green);
 }
 .header .amount-items {
   width: auto;

@@ -70,4 +70,18 @@
     gap: 30px !important;
     margin: 0 50px !important;
   }
+  .header__cart_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .header__drop-cart{
+    left: 0!important;
+    right: 0!important;
+    min-width: auto!important;
+
+  }
+  .header__drop-cart-container{
+    position: inherit!important;
+  }
 }

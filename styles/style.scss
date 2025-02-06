@@ -19,7 +19,7 @@ input {
 .header {
   @include block-set(100%, 120px, 0 30px, 0, var(--color-green));
   display: flex;
-  
+
   box-sizing: border-box;
 
   &__inner {
@@ -29,18 +29,22 @@ input {
     align-items: center;
     column-gap: 50px;
   }
+
   &__logo {
     //		flex-grow:1;
   }
+
   &__menu.services {
     flex-grow: 1;
   }
+
   &__menu.services ul {
     display: flex;
     justify-content: left;
     gap: 30px;
     margin: 0 50px;
   }
+
   &__menu.services ul li a {
     @include font-face($font-size-regular * 1px, 300, var(--color-white));
     text-transform: uppercase;
@@ -57,16 +61,70 @@ input {
     height: 1px;
     background: var(--color-white);
   }
+
   &__menu.services a:hover::after {
     width: 100%;
   }
 
-  &__drop-cart {
-    @include block-set(500px, auto, 30px, 0 auto 0 -394px, var(--color-dark));
-    position: absolute;
-    top: 28px;
+  &__cart_container {
+
+  }
+
+  &__cart {
+    position: relative;
+    z-index: 100;
+
+  }
+
+  &__drop-cart-container {
+    position: relative;
     display: none;
-    justify-content: flex-end;
+    z-index: 10;
+
+  }
+
+  &__drop-cart {
+    @include block-set(auto, auto, 0px, -55px 0 0 0, var(--color-dark));
+    position: absolute;
+    right: -10px;
+    min-width: 450px;
+
+    p {
+      @include font-face($font-size-regular * 1px, 300, var(--color-black));
+    }
+
+    p.cart-amount {
+      @include font-face($font-size-header-fourth * 1px, 600, var(--color-beige));
+    }
+
+    .cart-item-container {
+      @include block-set(100%, auto, 20px, 0, var(--color-white));
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    .drop-cart-inner {
+      padding: 10px 20px;
+
+      p.cart_header {
+        color: var(--color-white)
+      }
+    }
+
+    .cart-order-product {
+      display: grid;
+      grid-template-columns: 1fr 4fr 2fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 20px;
+      align-items: center;
+
+      img {
+        width: 30px;
+        height: auto;
+      }
+    }
   }
 
   &__button {
@@ -79,20 +137,18 @@ input {
     white-space: nowrap;
   }
 
+
   &__button p,
   &__button-drop p {
     margin-top: 3px;
   }
 
   &__button-drop {
-    font-family: var(--font-family-roboto);
     background-color: var(--color-green);
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
+    border-radius: 40px;
     white-space: nowrap;
-    border: 1px solid var(--color-green);
   }
+
 
   & .amount-items {
     @include block-set(auto, auto, 3px, 0 auto, var(--color-green));
@@ -130,6 +186,7 @@ input {
     background: url("../images/svg/phone.svg") 0 50% no-repeat;
     padding-left: 30px;
   }
+
   &__contact.time {
     white-space: nowrap;
     color: var(--color-white);
@@ -152,6 +209,7 @@ input {
   .all-goods {
     background: url("../images/svg/goods.svg") 20px 50% no-repeat;
   }
+
   .cart {
     background-image: url("../images/svg/cart.svg");
     background-repeat: no-repeat;
@@ -188,6 +246,7 @@ input {
     height: 1px;
     background: var(--color-beige);
   }
+
   &__menu-item a:hover::after {
     width: 100%;
   }
@@ -235,6 +294,7 @@ input {
     text-align: left;
     margin: 0 100px;
   }
+
   &__items-inner .description .text {
     font-size: 16px;
     line-height: 24px;
@@ -259,20 +319,22 @@ input {
 
 .section_01 {
   @include block-set(
-    100%,
-    auto,
-    80px 0,
-    0 auto,
-    url("../images/bg_fon1.jpg") repeat
+                  100%,
+                  auto,
+                  80px 0,
+                  0 auto,
+                  url("../images/bg_fon1.jpg") repeat
   );
   display: flex;
   justify-content: center;
   flex-direction: column;
+
   h2 {
     color: var(--color-green);
     margin: 0 0 30px 0;
     text-align: center;
   }
+
   &__promotions {
     @include block-set(100%, auto, 0, 0 auto, none);
     display: flex;
@@ -281,6 +343,7 @@ input {
     gap: 30px;
     flex-wrap: wrap;
   }
+
   &__promotions-item {
     width: colums(3);
     padding: 30px;
@@ -293,6 +356,7 @@ input {
     row-gap: 10px;
     box-sizing: border-box;
   }
+
   /*	&__promotions-item:hover{
 		background: var(--color-white);
 		box-shadow: 12px 12px 10px rgba(0, 0, 0, .2);
@@ -339,11 +403,11 @@ input {
 
   &__promotions-item-button {
     @include block-set(
-      auto,
-      40px,
-      auto,
-      0 auto,
-      var(--color-green) 10% 50% no-repeat
+                    auto,
+                    40px,
+                    auto,
+                    0 auto,
+                    var(--color-green) 10% 50% no-repeat
     );
     border: 0;
     font-size: 12px;
@@ -352,11 +416,11 @@ input {
 
   &__promotions-item-button:hover {
     @include block-set(
-      auto,
-      40px,
-      auto,
-      0 auto,
-      var(--color-green-hover) 10% 50% no-repeat
+                    auto,
+                    40px,
+                    auto,
+                    0 auto,
+                    var(--color-green-hover) 10% 50% no-repeat
     );
   }
 
@@ -403,6 +467,7 @@ input {
     justify-content: center;
     flex-wrap: nowrap;
   }
+
   &__banner.container img {
     width: 100%;
     height: auto;
@@ -414,6 +479,7 @@ input {
     align-items: center;
     text-align: right;
   }
+
   &__banner.container .inner_right {
     display: flex;
     justify-content: center;
@@ -432,11 +498,11 @@ input {
 
 .section_03 {
   @include block-set(
-    100%,
-    auto,
-    50px 0 50px 0,
-    0 auto,
-    url("../images/bg_fon_2.png") 0 100% no-repeat
+                  100%,
+                  auto,
+                  50px 0 50px 0,
+                  0 auto,
+                  url("../images/bg_fon_2.png") 0 100% no-repeat
   );
   display: flex;
   justify-content: center;
@@ -455,9 +521,11 @@ input {
     justify-content: center;
 
     gap: 30px;
+
     h3 {
       margin: 20px 0 0 0;
     }
+
     .sub_text {
       font-size: 14px;
       font-weight: 500;
@@ -490,18 +558,21 @@ input {
     justify-content: flex-start;
     gap: 10px;
   }
+
   &__container.email {
     background: url("../images/svg/email_small.svg") 0 50% no-repeat;
     padding-left: 40px;
     justify-content: flex-start;
     gap: 10px;
   }
+
   &__container.support {
     background: url("../images/svg/support_small.svg") 0 50% no-repeat;
     padding-left: 40px;
     justify-content: flex-start;
     gap: 10px;
   }
+
   span.black {
     color: var(--color-dark);
     font-weight: 600;
@@ -522,10 +593,12 @@ input {
     grid-column-gap: 30px;
     grid-row-gap: 0px;
   }
+
   &__container .tel {
     @include font-face($font-size-header-third * 1px, 500, var(--color-white));
     margin-top: 20px;
   }
+
   &__container .time {
     @include font-face($font-size-header-fifth * 1px, 300, var(--color-beige));
   }
