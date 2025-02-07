@@ -833,7 +833,7 @@ input {
 .slider__items-inner {
   overflow: hidden;
   display: none;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 .slider__items-inner img {

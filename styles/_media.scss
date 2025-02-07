@@ -26,8 +26,8 @@
   .section_02__banner.container .text {
     font-size: 2rem !important;
   }
-  .section_03{
-    background: #f6f6f6 url(../images/bg_fon_2.png) 0 100% no-repeat!important;
+  .section_03 {
+    background: #f6f6f6 url(../images/bg_fon_2.png) 0 100% no-repeat !important;
   }
 }
 
@@ -73,31 +73,31 @@
     gap: 30px !important;
     margin: 0 50px !important;
   }
-  .header__cart_container{
+  .header__cart_container {
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
-  .header__drop-cart{
-    left: 0!important;
-    right: 0!important;
-    min-width: auto!important;
+  .header__drop-cart {
+    left: 0 !important;
+    right: 0 !important;
+    min-width: auto !important;
 
   }
-  .header__drop-cart-container{
-    position: inherit!important;
+  .header__drop-cart-container {
+    position: inherit !important;
   }
 
-  .slider__arrow_right{
+  .slider__arrow_right {
 
-    margin: 430px 30px 0 0!important;
+    margin: 430px 30px 0 0 !important;
   }
-  .slider__arrow_left{
+  .slider__arrow_left {
 
-    margin: 430px 0 0 30px!important;
+    margin: 430px 0 0 30px !important;
   }
-  .slider__items-inner .description{
-    margin: 0 30px!important;
+  .slider__items-inner .description {
+    margin: 0 30px !important;
   }
 
 }

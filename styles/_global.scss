@@ -4,51 +4,54 @@ html {
 }
 
 
-body{
-	font-family: var(--font-family-roboto);
-	@include font-face ($font-size-regular*1px, 300, var(--color-dark));
-	height: 100vh;
-	
+body {
+  font-family: var(--font-family-roboto);
+  @include font-face($font-size-regular*1px, 300, var(--color-dark));
+  height: 100vh;
+
 }
 
-h1{
-	@include font-face ($font-size-header-first*1px, 900, var(--color-dark));
-	text-transform: uppercase;
-}
-h2{
-	@include font-face ($font-size-header-second*1px, 700, var(--color-dark));
-	text-transform: uppercase;
-}
-h3{
-	@include font-face ($font-size-header-third*1px, 700, var(--color-dark));
-	text-transform: uppercase;
-}
-h4{
-	@include font-face ($font-size-header-fourth*1px, 500, var(--color-dark));
-	text-transform: uppercase;
+h1 {
+  @include font-face($font-size-header-first*1px, 900, var(--color-dark));
+  text-transform: uppercase;
 }
 
-h5{
-	@include font-face ($font-size-header-fifth*1px, 500, var(--color-beige));
-	text-transform: uppercase;
+h2 {
+  @include font-face($font-size-header-second*1px, 700, var(--color-dark));
+  text-transform: uppercase;
 }
 
-a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover),.section_01__promotions-item-button:hover,.section_01__promotions-item-button:not(:hover){
-	transition: .5s;
+h3 {
+  @include font-face($font-size-header-third*1px, 700, var(--color-dark));
+  text-transform: uppercase;
 }
 
-.padding_right_50{
-	padding-right: 50px;
+h4 {
+  @include font-face($font-size-header-fourth*1px, 500, var(--color-dark));
+  text-transform: uppercase;
 }
 
-.padding_left_50{
-	padding-left: 50px;
+h5 {
+  @include font-face($font-size-header-fifth*1px, 500, var(--color-beige));
+  text-transform: uppercase;
 }
 
-.flex{
-	display: flex!important;
+a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promotions-item:hover, .section_01__promotions-item:not(:hover), .section_01__promotions-item-button:hover, .section_01__promotions-item-button:not(:hover) {
+  transition: .5s;
 }
 
-.hide{
-	display: none;
+.padding_right_50 {
+  padding-right: 50px;
+}
+
+.padding_left_50 {
+  padding-left: 50px;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.hide {
+  display: none;
 }

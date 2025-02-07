@@ -280,7 +280,8 @@ input {
     height: 50px;
     opacity: .9;
   }
-  &__arrow_left:hover, &__arrow_right:hover{
+
+  &__arrow_left:hover, &__arrow_right:hover {
     cursor: pointer;
     opacity: 1;
   }
@@ -293,7 +294,7 @@ input {
   &__items-inner {
     overflow: hidden;
     display: none;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
   }
 
