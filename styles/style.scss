@@ -258,15 +258,41 @@ input {
 
 .slider {
   @include block-set(100%, 500px, 0, 0 auto, var(--color-black));
-  display: flex;
+
+  &__arrow_left {
+    background: url(../images/svg/arrow_left.svg) no-repeat;
+    position: absolute;
+    left: 0;
+    margin: 200px 0 0 30px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    opacity: .9;
+  }
+
+  &__arrow_right {
+    background: url(../images/svg/arrow_right.svg) no-repeat;
+    position: absolute;
+    right: 0;
+    margin: 200px 30px 0 0;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    opacity: .9;
+  }
+  &__arrow_left:hover, &__arrow_right:hover{
+    cursor: pointer;
+    opacity: 1;
+  }
 
   &__items {
     overflow: hidden;
+    display: flex;
   }
 
   &__items-inner {
     overflow: hidden;
-    display: flex;
+    display: none;
     justify-content: left;
     align-items: center;
   }
@@ -292,7 +318,7 @@ input {
     justify-content: center;
     flex-direction: column;
     text-align: left;
-    margin: 0 100px;
+    margin: 0 130px;
   }
 
   &__items-inner .description .text {
