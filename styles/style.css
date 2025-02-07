@@ -535,12 +535,10 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
     position: inherit !important;
   }
   .slider__arrow_right {
-    bottom: 0;
-    margin: 0 30px 70px 0 !important;
+    margin: 430px 30px 0 0 !important;
   }
   .slider__arrow_left {
-    bottom: 0;
-    margin: 0 0 70px 30px !important;
+    margin: 430px 0 0 30px !important;
   }
   .slider__items-inner .description {
     margin: 0 30px !important;
