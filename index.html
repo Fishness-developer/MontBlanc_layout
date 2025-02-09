@@ -9,6 +9,7 @@
           content="E-shop of italian quality products">
     <title>Mont Blank</title>
     <script src="scripts/script.js" defer></script>
+    <script src="scripts/cart.js" defer></script>
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -41,7 +42,7 @@
             <div class="header__cart">
                 <button class="header__button button cart">
                     <p>cart</p>
-                    <p class="amount-items-null">5</p>
+                    <p class="amount-items-null"  data-amount></p>
                 </button>
             </div>
             <div class="header__drop-cart-container">
@@ -50,22 +51,22 @@
                         <p class="cart_header">Your order: </p>
                         <p class="cart-amount"><span class="cart-amount-total">874.00</span> ₪</p>
                     </div>
-                    <div class="cart-item-container">
-                        <div class="cart-order-product">
-                            <img src="images/products/Costa_dOro.png"/>
-                            <p>Olive oil Extra Virgin, Costa d’Oro</p>
-                            <p>45.00 ₪</p>
-                            <div>1 pcs</div>
-                            <div><img src="images/svg/close.svg"></div>
-                        </div>
-                        <div class="cart-order-product">
+                    <div class="cart-item-container" data-items>
+<!--                        <div class="cart-order-product">-->
+<!--                            <img src="images/products/Costa_dOro.png"/>-->
+<!--                            <p>Olive oil Extra Virgin, Costa d’Oro</p>-->
+<!--                            <p>45.00 ₪</p>-->
+<!--                            <div>1 pcs</div>-->
+<!--                            <div><img src="images/svg/close.svg"></div>-->
+<!--                        </div>-->
+<!--                        <div class="cart-order-product">-->
 
-                            <img src="images/products/chips.jpg"/>
-                            <p>Potato chips Classic, San Carlo</p>
-                            <p>16.00 ₪</p>
-                            <div>2 pcs</div>
-                            <div><img src="images/svg/close.svg"></div>
-                        </div>
+<!--                            <img src="images/products/chips.jpg"/>-->
+<!--                            <p>Potato chips Classic, San Carlo</p>-->
+<!--                            <p>16.00 ₪</p>-->
+<!--                            <div>2 pcs</div>-->
+<!--                            <div><img src="images/svg/close.svg"></div>-->
+<!--                        </div>-->
                     </div>
 
                 </div>
@@ -142,7 +143,7 @@
                 <div class="item-image"><img src="images/products/chips.jpg" width="149" height="170" alt=""/></div>
                 <p class="price"><span class="extra">16.00</span> ₪</p>
                 <p class="offer">21.00₪<span class="percent">-15%</span></p>
-                <p class="item-description">Potato chips Classic, San Carlo </p>
+                <p class="item-description" data-product-name>Potato chips Classic, San Carlo </p>
             </a>
                 <div class="amount">
                     <button data-amount-decrease>-</button>
