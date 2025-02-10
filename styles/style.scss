@@ -98,11 +98,11 @@ input {
     }
 
     .cart-item-container {
-      @include block-set(100%, auto, 20px, 0, var(--color-white));
+      @include block-set(100%, auto, 0, 0, var(--color-white));
       box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      row-gap: 20px;
+      //display: flex;
+      //flex-direction: column;
+      //row-gap: 20px;
     }
 
     .drop-cart-inner {
@@ -113,14 +113,15 @@ input {
       }
     }
 
-    .cart-order-product div {
+    .cart-order-product  {
       display: grid;
-      grid-template-columns: 10% 40% 20% 20% 10%;
+      grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
       grid-template-rows: 1fr;
       align-items: center;
       justify-items: center;
       width: auto;
       align-self: center;
+      padding: 10px;
 
       img {
         width: 30px;
@@ -128,6 +129,21 @@ input {
       }
     }
   }
+
+ &__drop-cart-button{
+   @include font-face($font-size-regular * 1px, 500, var(--color-white));
+   font-family: var(--font-family-roboto);
+   background: var(--color-green);
+   align-items: center;
+   white-space: nowrap;
+   text-align: center;
+   text-transform: uppercase;
+   border: 0;
+   width: 100%;
+   justify-content: center;
+   padding: 10px 0;
+
+ }
 
   &__button {
     font-family: var(--font-family-roboto);

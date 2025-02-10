@@ -637,13 +637,10 @@ input {
 .header__drop-cart .cart-item-container {
   width: 100%;
   height: auto;
-  padding: 20px;
+  padding: 0;
   margin: 0;
   background: var(--color-white);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
 }
 .header__drop-cart .drop-cart-inner {
   padding: 10px 20px;
@@ -651,18 +648,35 @@ input {
 .header__drop-cart .drop-cart-inner p.cart_header {
   color: var(--color-white);
 }
-.header__drop-cart .cart-order-product div {
+.header__drop-cart .cart-order-product {
   display: grid;
-  grid-template-columns: 10% 40% 20% 20% 10%;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   align-items: center;
   justify-items: center;
   width: auto;
   align-self: center;
+  padding: 10px;
 }
-.header__drop-cart .cart-order-product div img {
+.header__drop-cart .cart-order-product img {
   width: 30px;
   height: auto;
+}
+.header__drop-cart-button {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 21px;
+  font-family: var(--font-family-roboto);
+  background: var(--color-green);
+  align-items: center;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0;
+  width: 100%;
+  justify-content: center;
+  padding: 10px 0;
 }
 .header__button {
   font-family: var(--font-family-roboto);
