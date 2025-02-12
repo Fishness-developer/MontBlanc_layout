@@ -662,6 +662,9 @@ input {
   width: 30px;
   height: auto;
 }
+.header__drop-cart .cart-order-product .cart-close {
+  cursor: pointer;
+}
 .header__drop-cart-button {
   font-size: 14px;
   font-weight: 500;
