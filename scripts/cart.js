@@ -1,3 +1,26 @@
+// Cards
+const amount = document.querySelectorAll(".amount")
+amount.forEach((button) => {
+    let counter = 1;
+    button.addEventListener("click", (e) => {
+        if (e.target.textContent == "+") {
+            counter++
+        } else if (e.target.textContent == "-" && counter > 1) {
+            counter--
+        }
+        e.currentTarget.querySelector('.amount-input').value = counter;
+    })
+})
+
+
+
+const buttonCart = document.querySelector(".header__cart")
+const buttonDropCart = document.querySelector(".header__drop-cart-container")
+buttonCart.addEventListener('click', (e) => {
+    buttonDropCart.classList.toggle("flex")
+    buttonCart.classList.toggle("header__button-drop")
+})
+
 // CART FUNCTIONS
 const amountProducts = document.querySelector("[data-amount]")
 const cartItemContainer = document.querySelector("[data-items]")
@@ -9,6 +32,24 @@ let sum = 0.00
 
 amountProducts.textContent = valNumber
 cartAmountTotal.textContent = sum.toFixed(2)
+
+// function tooltipCart(){
+//     document.querySelector(".tooltip_cart").classList.add("flex")
+//     setTimeout(function() {
+//         document.querySelector(".tooltip_cart").classList.remove("flex")
+//     }, 1000)
+//
+// }
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Опция для плавной прокрутки
+    });
+    buttonDropCart.classList.add("flex")
+    buttonCart.classList.add("header__button-drop")
+}
+
 
 function updateCartVisibility() {
     const cartTotal = document.querySelector("[data-cart-total]");
@@ -70,8 +111,9 @@ cartItem.forEach((item) => {
                         sumItems(-valClear);
                     });
                 });
-
-                alert("Added to cart")
+                // tooltipCart()
+                // alert("Added to cart")
+                scrollToTop()
             }
         })
     })
