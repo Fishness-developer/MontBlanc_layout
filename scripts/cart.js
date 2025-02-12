@@ -51,7 +51,7 @@ cartItem.forEach((item) => {
                     <div class="cart-order-product">
                          <div class="cart-image"><img src="${imgItem}" /> </div>
                          <p data-name>${nameItem}</p>
-                         <p><span data-price>${priceItem}</span> ₪</p>
+                         <p><span data-price>${priceItem.toFixed(2)}</span> ₪</p>
                          <div><span data-val>${val}</span> pcs</div>
                          <div class="cart-close"><img src="images/svg/close.svg" /></div>
                     </div>
