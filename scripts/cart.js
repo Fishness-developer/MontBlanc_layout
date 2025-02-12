@@ -1,18 +1,16 @@
-// Cards
+// CART FUNCTIONS
 const amount = document.querySelectorAll(".amount")
 amount.forEach((button) => {
     let counter = 1;
     button.addEventListener("click", (e) => {
-        if (e.target.textContent == "+") {
+        if (e.target.textContent === "+") {
             counter++
-        } else if (e.target.textContent == "-" && counter > 1) {
+        } else if (e.target.textContent === "-" && counter > 1) {
             counter--
         }
         e.currentTarget.querySelector('.amount-input').value = counter;
     })
 })
-
-
 
 const buttonCart = document.querySelector(".header__cart")
 const buttonDropCart = document.querySelector(".header__drop-cart-container")
@@ -21,45 +19,30 @@ buttonCart.addEventListener('click', (e) => {
     buttonCart.classList.toggle("header__button-drop")
 })
 
-// CART FUNCTIONS
 const amountProducts = document.querySelector("[data-amount]")
 const cartItemContainer = document.querySelector("[data-items]")
 const cartAmountTotal = document.querySelector(".cart-amount-total")
 
 let valNumber = 0
-let amountCart = 0.00
 let sum = 0.00
 
 amountProducts.textContent = valNumber
 cartAmountTotal.textContent = sum.toFixed(2)
 
-// function tooltipCart(){
-//     document.querySelector(".tooltip_cart").classList.add("flex")
-//     setTimeout(function() {
-//         document.querySelector(".tooltip_cart").classList.remove("flex")
-//     }, 1000)
-//
-// }
 
 function scrollToTop() {
     window.scrollTo({
         top: 0,
-        behavior: 'smooth' // Опция для плавной прокрутки
+        behavior: 'smooth'
     });
     buttonDropCart.classList.add("flex")
     buttonCart.classList.add("header__button-drop")
 }
 
-
 function updateCartVisibility() {
     const cartTotal = document.querySelector("[data-cart-total]");
-    if (valNumber !== 0) {
-        cartTotal.classList.remove("hide");
-        cartTotal.classList.add("flex");
-    } else {
-        cartTotal.classList.remove("flex");
-        cartTotal.classList.add("hide");
-    }
+    cartTotal.classList.toggle("hide", valNumber === 0);
+    cartTotal.classList.toggle("flex", valNumber !== 0);
 }
 
 function sumItems(val) {
@@ -67,8 +50,6 @@ function sumItems(val) {
     amountProducts.textContent = valNumber
     updateCartVisibility()
 }
-
-// cartAmountTotal.innerHTML = amountCart
 
 function amountTotal(amount) {
     sum += amount;
@@ -111,8 +92,6 @@ cartItem.forEach((item) => {
                         sumItems(-valClear);
                     });
                 });
-                // tooltipCart()
-                // alert("Added to cart")
                 scrollToTop()
             }
         })
