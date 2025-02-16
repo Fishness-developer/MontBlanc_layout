@@ -1,4 +1,3 @@
-
 // CARDS FUNCTIONS
 const amount = document.querySelectorAll(".amount")
 amount.forEach((button) => {
@@ -27,9 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartAmountTotal = document.querySelector(".cart-amount-total")
 
     let valNumber = 0
-    let value = 0
     let sum = 0.00
-    let price = 0.00
     amountProducts.textContent = valNumber
     cartAmountTotal.textContent = sum.toFixed(2)
 
@@ -62,24 +59,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function amountTotalStorage() {
         document.querySelectorAll(".cart-order-product").forEach(e => {
-            price = Number((e.querySelector("[data-price]").textContent))
-            value = Number(e.querySelector("[data-val]").textContent)
-            amountTotal(price*value)
+            const price = Number((e.querySelector("[data-price]").textContent))
+            const value = Number(e.querySelector("[data-val]").textContent)
+            amountTotal(price * value)
         })
     }
 
     function sumItemsStorage() {
         document.querySelectorAll(".cart-order-product").forEach(e => {
-            value = Number(e.querySelector("[data-val]").textContent)
+            const value = Number(e.querySelector("[data-val]").textContent)
             sumItems(value)
         })
     }
 
 
-    // FUNCTION LOCAL STORAGE UPDATE
+    // FUNCTION LOCAL STORAGE
     const updateStorage = () => {
         let pattern = cartItemContainer.innerHTML.trim()
-        console.log(pattern)
         pattern.length ? localStorage.setItem("products", pattern) : localStorage.removeItem("products")
     }
 
@@ -102,10 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', (e) => {
             cart.forEach((item) => {
                 if (e.target == item) {
-                    let nameItem = e.currentTarget.querySelector('.item-description').textContent
-                    let priceItem = parseInt(e.currentTarget.querySelector('.extra').textContent)
-                    let imgItem = e.currentTarget.querySelector('.item-image img').src
-                    let val = parseInt(e.currentTarget.querySelector('.amount-input').value)
+                    const nameItem = e.currentTarget.querySelector('.item-description').textContent
+                    const priceItem = parseInt(e.currentTarget.querySelector('.extra').textContent)
+                    const imgItem = e.currentTarget.querySelector('.item-image img').src
+                    const val = parseInt(e.currentTarget.querySelector('.amount-input').value)
                     cartItemContainer.innerHTML += `
                     <div class="cart-order-product">
                          <div class="cart-image"><img src="${imgItem}" /> </div>
