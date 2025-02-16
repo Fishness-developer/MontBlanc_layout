@@ -1,6 +1,3 @@
-
-
-
 // Slider
 const slides = document.querySelectorAll(".slider__items-inner")
 let slideIndex = 0
@@ -34,5 +31,6 @@ function nextSlide() {
 slideIndex++
     showSlides(slideIndex)
 }
+
 
 	
