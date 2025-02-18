@@ -392,42 +392,42 @@ body {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 900;
   color: var(--color-dark);
-  line-height: 90px;
+  line-height: 9rem;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 4.8rem;
   font-weight: 700;
   color: var(--color-dark);
-  line-height: 72px;
+  line-height: 7.2rem;
   text-transform: uppercase;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 700;
   color: var(--color-dark);
-  line-height: 36px;
+  line-height: 3.6rem;
   text-transform: uppercase;
 }
 
 h4 {
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-dark);
-  line-height: 30px;
+  line-height: 3rem;
   text-transform: uppercase;
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 500;
   color: var(--color-beige);
-  line-height: 24px;
+  line-height: 2.4rem;
   text-transform: uppercase;
 }
 
@@ -449,6 +449,10 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 
 .hide {
   display: none;
+}
+
+.red {
+  color: #ff0000;
 }
 
 @media (max-width: 1280px) {
@@ -492,6 +496,9 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   }
   .nav__menu {
     gap: 10px !important;
+  }
+  .section_01 {
+    padding: 30px 0 !important;
   }
   .section_02__banner.container {
     flex-wrap: wrap !important;
@@ -542,6 +549,11 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
   }
   .slider__items-inner .description {
     margin: 0 30px !important;
+  }
+  .section_01__shopping-cart-container .order_delivery .radio_group {
+    gap: 0 !important;
+    flex-direction: column !important;
+    max-width: 270px !important;
   }
 }
 .button,
@@ -680,6 +692,7 @@ input {
   width: 100%;
   justify-content: center;
   padding: 10px 0;
+  text-decoration: none;
 }
 .header__button {
   font-family: var(--font-family-roboto);
@@ -902,26 +915,17 @@ input {
   padding: 80px 0;
   margin: 0 auto;
   background: url("../images/bg_fon1.jpg") repeat;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  /*	&__promotions-item:hover{
-        background: var(--color-white);
-        box-shadow: 12px 12px 10px rgba(0, 0, 0, .2);
-        transition: 1s;
-        cursor: pointer;
-    }*/
 }
 .section_01 h2 {
   color: var(--color-green);
-  margin: 0 0 30px 0;
+  margin: 0;
   text-align: center;
 }
 .section_01__promotions {
   width: 100%;
   height: auto;
   padding: 0;
-  margin: 0 auto;
+  margin: 30px auto;
   background: none;
   display: flex;
   justify-content: center;
@@ -1020,6 +1024,252 @@ input {
   color: var(--color-green);
   font-size: 18px;
   font-weight: 600;
+}
+.section_01__shopping-cart-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+.section_01__shopping-cart-container .cart-item-container {
+  width: 100%;
+  height: auto;
+  padding: auto;
+  margin: 0 auto;
+  background: none;
+  max-width: 1170px;
+  box-sizing: border-box;
+}
+.section_01__shopping-cart-container .cart-item-container .cart-order-product {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-items: center;
+  width: auto;
+  align-self: center;
+  padding: 10px;
+  margin: 10px auto;
+  background: var(--color-white);
+}
+.section_01__shopping-cart-container .cart-item-container img {
+  width: 50px;
+  height: auto;
+}
+.section_01__shopping-cart-container .cart-item-container .cart-close img {
+  width: 20px;
+}
+.section_01__shopping-cart-container .total_order_price {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 0 auto;
+  background: var(--color-green);
+  max-width: 1170px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.section_01__shopping-cart-container .total_order_price p,
+.section_01__shopping-cart-container .total_order_price h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 30px;
+}
+.section_01__shopping-cart-container .order_delivery {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  margin: 50px auto 10px auto;
+  background: var(--color-white);
+  box-sizing: border-box;
+  max-width: 1170px;
+  /* The container */
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  /* Show the indicator (dot/circle) when checked */
+}
+.section_01__shopping-cart-container .order_delivery .radio_group {
+  display: flex;
+  justify-content: left;
+  gap: 30px;
+}
+.section_01__shopping-cart-container .order_delivery .container {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.section_01__shopping-cart-container .order_delivery .container input {
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+}
+.section_01__shopping-cart-container .order_delivery .checkmark {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 18px;
+  background: #eee url("../images/svg/truck_dark.svg") 20px 50% no-repeat;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px 15px 60px;
+  border-radius: 50px;
+}
+.section_01__shopping-cart-container .order_delivery .container:hover input ~ .checkmark {
+  background-color: #ccc;
+  transition: 1s;
+}
+.section_01__shopping-cart-container .order_delivery .container input:checked ~ .checkmark {
+  color: var(--color-white);
+  background: var(--color-green) url("../images/svg/truck_light.svg") 20px 50% no-repeat;
+  transition: 0.3s;
+}
+.section_01__shopping-cart-container .order_delivery .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.section_01__shopping-cart-container .order_delivery .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.section_01__shopping-cart-container .order_info {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  margin: 10px auto;
+  background: var(--color-white);
+  box-sizing: border-box;
+  max-width: 1170px;
+}
+.section_01__shopping-cart-container .order_payment {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  margin: 10px auto 10px auto;
+  background: var(--color-white);
+  box-sizing: border-box;
+  max-width: 1170px;
+}
+.section_01 .go-back {
+  border: 0;
+  padding: 10px 20px;
+  background: var(--color-green);
+  color: var(--color-white);
+  border-radius: 30px;
+  margin-left: 30px;
+  order: 1;
+}
+.section_01__header_container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1170px;
+  align-items: center;
+  margin: 30px auto;
+  padding: 0 30px;
+}
+.section_01 .order_info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.section_01 .order_info input {
+  border-radius: 0;
+  border-color: rgba(0, 0, 0, 0.1);
+  height: 30px;
+  padding: 5px 10px;
+  margin: 0;
+  text-transform: none;
+  font-weight: 200;
+  font-size: 12px;
+  font-weight: 100;
+  color: var(--color-dark);
+  line-height: 18px;
+}
+.section_01 .order_info textarea {
+  padding: 5px 10px;
+  border-color: rgba(0, 0, 0, 0.1);
+  min-height: 80px;
+}
+.section_01 .order_info label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 24px;
+}
+.section_01 .order_payment {
+  /* The container */
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  /* Show the indicator (dot/circle) when checked */
+  /* Style the indicator (dot/circle) */
+}
+.section_01 .order_payment__container {
+  margin: 20px 0;
+}
+.section_01 .order_payment .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.section_01 .order_payment .container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.section_01 .order_payment .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+.section_01 .order_payment .container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.section_01 .order_payment .container input:checked ~ .checkmark {
+  background-color: var(--color-green);
+}
+.section_01 .order_payment .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.section_01 .order_payment .container input:checked ~ .checkmark:after {
+  display: block;
+}
+.section_01 .order_payment .container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 
 .section_02 {

@@ -73,22 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // FUNCTION LOCAL STORAGE
+// FUNCTION LOCAL STORAGE
     const updateStorage = () => {
         let pattern = cartItemContainer.innerHTML.trim()
         pattern.length ? localStorage.setItem("products", pattern) : localStorage.removeItem("products")
     }
 
     const initialStorage = () => {
-        if (localStorage.getItem('products') !== null) {
+        if (localStorage.getItem('products') !== null)
             cartItemContainer.innerHTML += localStorage.getItem("products")
-        }
         amountTotalStorage()
         sumItemsStorage()
-
     }
     initialStorage()
 
+
+//ADD PRODUCTS
     const cart = document.querySelectorAll('[data-cart]')
     const cartItem = document.querySelectorAll('[data-product-name]')
     const desript = document.querySelectorAll('.item-description')
@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
+//DELETE PRODUCTS
     cartItemContainer.addEventListener('click', (e) => {
         if (e.target.closest('.cart-close')) {
             const cartProduct = e.target.closest('.cart-order-product');
@@ -132,3 +133,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 })
+

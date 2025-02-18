@@ -12,27 +12,27 @@ body {
 }
 
 h1 {
-  @include font-face($font-size-header-first*1px, 900, var(--color-dark));
+  @include font-face($font-size-header-first/10*1rem, 900, var(--color-dark));
   text-transform: uppercase;
 }
 
 h2 {
-  @include font-face($font-size-header-second*1px, 700, var(--color-dark));
+  @include font-face($font-size-header-second/10*1rem, 700, var(--color-dark));
   text-transform: uppercase;
 }
 
 h3 {
-  @include font-face($font-size-header-third*1px, 700, var(--color-dark));
+  @include font-face($font-size-header-third/10*1rem, 700, var(--color-dark));
   text-transform: uppercase;
 }
 
 h4 {
-  @include font-face($font-size-header-fourth*1px, 500, var(--color-dark));
+  @include font-face($font-size-header-fourth/10*1rem, 500, var(--color-dark));
   text-transform: uppercase;
 }
 
 h5 {
-  @include font-face($font-size-header-fifth*1px, 500, var(--color-beige));
+  @include font-face($font-size-header-fifth/10*1rem, 500, var(--color-beige));
   text-transform: uppercase;
 }
 
@@ -54,4 +54,8 @@ a:hover, a:not(:hover), a:hover::after, a:not(:hover)::after, .section_01__promo
 
 .hide {
   display: none;
+}
+
+.red{
+  color:#ff0000;
 }
