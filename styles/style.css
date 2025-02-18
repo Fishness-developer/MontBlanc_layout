@@ -1220,7 +1220,7 @@ input {
 .section_01 .order_payment__container {
   margin: 20px 0;
 }
-.section_01 .order_payment .container {
+.section_01 .order_payment .wrapper {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -1235,7 +1235,7 @@ input {
   -ms-user-select: none;
   user-select: none;
 }
-.section_01 .order_payment .container input {
+.section_01 .order_payment .wrapper input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -1249,10 +1249,10 @@ input {
   background-color: #eee;
   border-radius: 50%;
 }
-.section_01 .order_payment .container:hover input ~ .checkmark {
+.section_01 .order_payment .wrapper:hover input ~ .checkmark {
   background-color: #ccc;
 }
-.section_01 .order_payment .container input:checked ~ .checkmark {
+.section_01 .order_payment .wrapper input:checked ~ .checkmark {
   background-color: var(--color-green);
 }
 .section_01 .order_payment .checkmark:after {
@@ -1260,10 +1260,10 @@ input {
   position: absolute;
   display: none;
 }
-.section_01 .order_payment .container input:checked ~ .checkmark:after {
+.section_01 .order_payment .wrapper input:checked ~ .checkmark:after {
   display: block;
 }
-.section_01 .order_payment .container .checkmark:after {
+.section_01 .order_payment .wrapper .checkmark:after {
   top: 9px;
   left: 9px;
   width: 8px;
