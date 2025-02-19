@@ -1173,6 +1173,12 @@ input {
   border-radius: 30px;
   margin-left: 30px;
   order: 1;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-white);
+  line-height: 21px;
 }
 .section_01__header_container {
   display: flex;
