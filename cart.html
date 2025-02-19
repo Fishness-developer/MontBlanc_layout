@@ -51,7 +51,7 @@
         </div>
 
         <div class="section_01__shopping-cart-container">
-            <div class="cart-item-container" data-shopping-cart>
+            <div class="cart-item-container" data-items>
 
             </div>
             <div class="total_order_price">
@@ -62,16 +62,16 @@
                 <h4>order time</h4>
                 <div class="radio_group">
                     <label class="container">
-                        <input type="radio" checked="checked" name="radio_1">
+                        <input type="radio" checked name="radio_1" value="Tomorrow from 9am to 12pm">
                         <span class="checkmark">Tomorrow from 9am to 12pm</span>
                     </label>
                     <label class="container">
-                        <input type="radio"  name="radio_1">
-                        <span class="checkmark">Tomorrow from 13pm to 16pm</span>
+                        <input type="radio"  name="radio_1" value="Tomorrow from 1pm to 4pm">
+                        <span class="checkmark">Tomorrow from 1pm to 4pm</span>
                     </label>
                     <label class="container">
-                        <input type="radio"  name="radio_1">
-                        <span class="checkmark">Tomorrow from 17pm to 20pm</span>
+                        <input type="radio"  name="radio_1" value="Tomorrow from 5pm to 8pm">
+                        <span class="checkmark">Tomorrow from 5pm to 8pm</span>
                     </label>
                 </div>
 
@@ -96,21 +96,21 @@
                 <h4>payment</h4>
                 <div class="order_payment__container">
                     <label class="wrapper">By card to the courier
-                        <input type="radio" checked="checked" name="radio_2">
+                        <input type="radio" checked name="radio_2" value="By card to the courier">
                         <span class="checkmark">&nbsp;</span>
                     </label>
                     <label class="wrapper">Cash to the courier
-                        <input type="radio" name="radio_2">
+                        <input type="radio" name="radio_2" value="Cash to the courier">
                         <span class="checkmark">&nbsp;</span>
                     </label>
                     <label class="wrapper">VISA, MasterCard
-                        <input type="radio" name="radio_2">
+                        <input type="radio" name="radio_2" value="VISA, MasterCard">
                         <span class="checkmark">&nbsp;</span>
                     </label>
                 </div>
 
             </div>
-            <div class="total_order_price"><h3>Order</h3></div>
+            <div class="total_order_price" data-order-send><h3>Order</h3></div>
         </div>
     </section>
 

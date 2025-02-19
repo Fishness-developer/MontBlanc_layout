@@ -1072,6 +1072,7 @@ input {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 .section_01__shopping-cart-container .total_order_price p,
 .section_01__shopping-cart-container .total_order_price h3 {
