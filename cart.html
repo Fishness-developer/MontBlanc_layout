@@ -80,20 +80,24 @@
 
             </div>
             <div class="order_info">
-                <h4>personal information</h4>
-                <label for="name">Name<span class="red">*</span></label>
-                <input placeholder="your name" name="name" id="name" type="text" required>
 
-                <label for="email">Email<span class="red">*</span></label>
+
+                <form id="order_form" autocomplete="on">
+                    <h4>personal information</h4>
+                    <label for="name">Name<span class="red">*</span></label>
+                    <input placeholder="your name" name="name" id="name" type="text" required>
+
+                    <label for="email">Email<span class="red">*</span></label>
                     <input placeholder="email" name="email" id="email" type="email" required>
 
-                <label for="adress">Adress<span class="red">*</span></label>
+                    <label for="adress">Adress<span class="red">*</span></label>
                     <input placeholder="adress delivery" name="adress" id="adress" type="text" required>
 
-                <label for="phone">Phone<span class="red">*</span></label>
+                    <label for="phone">Phone<span class="red">*</span></label>
                     <input placeholder="your phone" name="phone" id="phone" type="tel" required>
-                <label for="comment">Comment</label>
+                    <label for="comment">Comment</label>
                     <textarea name="comment" id="comment" placeholder="leave your comment"></textarea>
+                </form>
             </div>
             <div class="order_payment">
                 <h4>payment</h4>
@@ -113,7 +117,9 @@
                 </div>
 
             </div>
-            <div class="total_order_price" data-order-send><h3>Order</h3></div>
+            <button class="total_order_price" data-order-send><h3>Order</h3></button>
+
+
         </div>
     </section>
 

@@ -1,9 +1,8 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const cartItemContainer = document.querySelector("[data-items]");
     const buttonOrder = document.querySelector("[data-order-send]");
     const cartAmountTotal = document.querySelector("[data-order-price]");
-
+    let productArray = [];
     let sum = 0.00;
     cartAmountTotal.textContent = sum.toFixed(2);
 
@@ -48,10 +47,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Processor for sending order
-    buttonOrder.addEventListener('click', () => {
+    buttonOrder.addEventListener('click', (e) => {
+        e.preventDefault()
         const radioGroup1 = document.querySelector('input[name="radio_1"]:checked')?.value;
-        console.log(radioGroup1);
         const radioGroup2 = document.querySelector('input[name="radio_2"]:checked')?.value;
-        console.log(radioGroup2);
-    });
+        let formData = new FormData()
+        let personName = document.getElementById("name").value
+        let personEmail = document.getElementById("email").value
+        let personAdress = document.getElementById("adress").value
+        let personPhone = document.getElementById("phone").value
+        let personComment = document.getElementById("comment").value
+        let totalPrice = document.querySelector("[data-order-price]").textContent;
+        formData.append("Name", personName)
+        formData.append("Email", personEmail)
+        formData.append("Adress", personAdress)
+        formData.append("Phone", personPhone)
+        formData.append("Comment", personComment)
+        formData.append("Delivery", radioGroup1)
+        formData.append("Payment", radioGroup2)
+        formData.append("Total", totalPrice)
+
+        document.querySelectorAll(".cart-order-product").forEach(e => {
+            let obj = {}
+            obj.image = e.querySelector(".cart-image img").src
+            obj.name = e.querySelector("[data-name]").textContent
+            obj.price = Number(e.querySelector("[data-price]").textContent)
+            obj.value = Number(e.querySelector("[data-val]").textContent)
+            productArray.push(obj)
+        })
+        formData.append("Products", JSON.stringify(productArray))
+
+        fetch("./product", {
+            method: 'POST',
+            body: formData
+        })
+            .then(r => r.text())
+            .then(data => console.log(data))
+    })
 });

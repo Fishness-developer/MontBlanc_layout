@@ -912,7 +912,7 @@ input {
 .section_01 {
   width: 100%;
   height: auto;
-  padding: 80px 0;
+  padding: 50px 0;
   margin: 0 auto;
   background: url("../images/bg_fon1.jpg") repeat;
 }
@@ -1076,6 +1076,7 @@ input {
   display: flex;
   justify-content: center;
   gap: 10px;
+  border: 0;
 }
 .section_01__shopping-cart-container .total_order_price p,
 .section_01__shopping-cart-container .total_order_price h3 {
@@ -1188,12 +1189,12 @@ input {
   margin: 30px auto;
   padding: 0 30px;
 }
-.section_01 .order_info {
+.section_01 .order_info form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.section_01 .order_info input {
+.section_01 .order_info form input {
   border-radius: 0;
   border-color: rgba(0, 0, 0, 0.1);
   height: 30px;
@@ -1206,12 +1207,12 @@ input {
   color: var(--color-dark);
   line-height: 18px;
 }
-.section_01 .order_info textarea {
+.section_01 .order_info form textarea {
   padding: 5px 10px;
   border-color: rgba(0, 0, 0, 0.1);
   min-height: 80px;
 }
-.section_01 .order_info label {
+.section_01 .order_info form label {
   font-size: 16px;
   font-weight: 500;
   color: var(--color-dark);
