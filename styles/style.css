@@ -1062,6 +1062,9 @@ input {
 .section_01__shopping-cart-container .cart-item-container .cart-close img {
   width: 20px;
 }
+.section_01__shopping-cart-container .cart-item-container .cart-close {
+  cursor: pointer;
+}
 .section_01__shopping-cart-container .total_order_price {
   width: 100%;
   height: auto;
