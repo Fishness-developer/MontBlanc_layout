@@ -4,6 +4,7 @@
 @import "variables";
 @import "mixins";
 @import "global";
+@import "media";
 
 .button,
 input {
@@ -16,9 +17,9 @@ input {
 }
 
 .header {
-  @include block-set(100%, 120px, 20px 0, 0, var(--color-green));
+  @include block-set(100%, 120px, 0 30px, 0, var(--color-green));
   display: flex;
-  padding: 0 30px;
+
   box-sizing: border-box;
 
   &__inner {
@@ -28,18 +29,22 @@ input {
     align-items: center;
     column-gap: 50px;
   }
+
   &__logo {
     //		flex-grow:1;
   }
+
   &__menu.services {
     flex-grow: 1;
   }
+
   &__menu.services ul {
     display: flex;
     justify-content: left;
     gap: 30px;
-    margin: 0 50xp;
+    margin: 0 50px;
   }
+
   &__menu.services ul li a {
     @include font-face($font-size-regular * 1px, 300, var(--color-white));
     text-transform: uppercase;
@@ -56,16 +61,90 @@ input {
     height: 1px;
     background: var(--color-white);
   }
+
   &__menu.services a:hover::after {
     width: 100%;
   }
 
-  &__drop-cart {
-    @include block-set(500px, auto, 30px, 0 auto 0 -394px, var(--color-dark));
-    position: absolute;
-    top: 28px;
+  &__cart_container {
+  }
+
+  &__cart {
+    position: relative;
+    z-index: 100;
+  }
+
+  &__drop-cart-container {
+    position: relative;
     display: none;
-    justify-content: flex-end;
+    z-index: 10;
+  }
+
+  &__drop-cart {
+    @include block-set(auto, auto, 0px, -55px 0 0 0, var(--color-dark));
+    position: absolute;
+    right: -10px;
+    min-width: 450px;
+
+    p {
+      @include font-face($font-size-regular * 1px, 300, var(--color-black));
+    }
+
+    p.cart-amount {
+      @include font-face(
+                      $font-size-header-fourth * 1px,
+                      600,
+                      var(--color-beige)
+      );
+    }
+
+    .cart-item-container {
+      @include block-set(100%, auto, 0, 0, var(--color-white));
+      box-sizing: border-box;
+    }
+
+    .drop-cart-inner {
+      padding: 10px 20px;
+
+      p.cart_header {
+        color: var(--color-white);
+      }
+    }
+
+    .cart-order-product {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: center;
+      justify-items: center;
+      width: auto;
+      align-self: center;
+      padding: 10px;
+
+      img {
+        width: 30px;
+        height: auto;
+      }
+
+      .cart-close {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__drop-cart-button {
+    @include font-face($font-size-regular * 1px, 500, var(--color-white));
+    font-family: var(--font-family-roboto);
+    background: var(--color-green);
+    align-items: center;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    text-decoration: none;
   }
 
   &__button {
@@ -84,14 +163,9 @@ input {
   }
 
   &__button-drop {
-    font-family: var(--font-family-roboto);
     background-color: var(--color-green);
-    border: 0;
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
+    border-radius: 40px;
     white-space: nowrap;
-    border: 1px solid var(--color-green);
   }
 
   & .amount-items {
@@ -130,6 +204,7 @@ input {
     background: url("../images/svg/phone.svg") 0 50% no-repeat;
     padding-left: 30px;
   }
+
   &__contact.time {
     white-space: nowrap;
     color: var(--color-white);
@@ -152,6 +227,7 @@ input {
   .all-goods {
     background: url("../images/svg/goods.svg") 20px 50% no-repeat;
   }
+
   .cart {
     background-image: url("../images/svg/cart.svg");
     background-repeat: no-repeat;
@@ -173,7 +249,7 @@ input {
   }
 
   &__menu-item a {
-    @include font-face($font-size-regular * 1px, 300, var(--color-white));
+    @include font-face($font-size-regular * 0.1rem, 300, var(--color-white));
     text-transform: uppercase;
     text-decoration: none;
   }
@@ -188,6 +264,7 @@ input {
     height: 1px;
     background: var(--color-beige);
   }
+
   &__menu-item a:hover::after {
     width: 100%;
   }
@@ -199,15 +276,43 @@ input {
 
 .slider {
   @include block-set(100%, 500px, 0, 0 auto, var(--color-black));
-  display: flex;
+
+  &__arrow_left {
+    background: url(../images/svg/arrow_left.svg) no-repeat;
+    position: absolute;
+    left: 0;
+    margin: 200px 0 0 30px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+  }
+
+  &__arrow_right {
+    background: url(../images/svg/arrow_right.svg) no-repeat;
+    position: absolute;
+    right: 0;
+    margin: 200px 30px 0 0;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    opacity: 0.9;
+  }
+
+  &__arrow_left:hover,
+  &__arrow_right:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
 
   &__items {
     overflow: hidden;
+    display: flex;
   }
 
   &__items-inner {
     overflow: hidden;
-    display: flex;
+    display: none;
     justify-content: left;
     align-items: center;
   }
@@ -233,8 +338,9 @@ input {
     justify-content: center;
     flex-direction: column;
     text-align: left;
-    margin: 0 100px;
+    margin: 0 130px;
   }
+
   &__items-inner .description .text {
     font-size: 16px;
     line-height: 24px;
@@ -259,28 +365,28 @@ input {
 
 .section_01 {
   @include block-set(
-    100%,
-    auto,
-    80px 0,
-    0 auto,
-    url("../images/bg_fon1.jpg") repeat
+                  100%,
+                  auto,
+                  50px 0,
+                  0 auto,
+                  url("../images/bg_fon1.jpg") repeat
   );
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+
   h2 {
     color: var(--color-green);
-    margin: 0 0 30px 0;
+    margin: 0;
     text-align: center;
   }
+
   &__promotions {
-    @include block-set(100%, auto, 0, 0 auto, none);
+    @include block-set(100%, auto, 0, 30px auto, none);
     display: flex;
     justify-content: center;
     align-items: stretch;
     gap: 30px;
     flex-wrap: wrap;
   }
+
   &__promotions-item {
     width: colums(3);
     padding: 30px;
@@ -293,12 +399,6 @@ input {
     row-gap: 10px;
     box-sizing: border-box;
   }
-  /*	&__promotions-item:hover{
-		background: var(--color-white);
-		box-shadow: 12px 12px 10px rgba(0, 0, 0, .2);
-		transition: 1s;
-		cursor: pointer;
-	}*/
 
   &__promotions-item a {
     text-decoration: none;
@@ -339,11 +439,11 @@ input {
 
   &__promotions-item-button {
     @include block-set(
-      auto,
-      40px,
-      auto,
-      0 auto,
-      var(--color-green) 10% 50% no-repeat
+                    auto,
+                    40px,
+                    auto,
+                    0 auto,
+                    var(--color-green) 10% 50% no-repeat
     );
     border: 0;
     font-size: 12px;
@@ -352,11 +452,11 @@ input {
 
   &__promotions-item-button:hover {
     @include block-set(
-      auto,
-      40px,
-      auto,
-      0 auto,
-      var(--color-green-hover) 10% 50% no-repeat
+                    auto,
+                    40px,
+                    auto,
+                    0 auto,
+                    var(--color-green-hover) 10% 50% no-repeat
     );
   }
 
@@ -393,6 +493,261 @@ input {
     font-size: 18px;
     font-weight: 600;
   }
+  &__shopping-cart-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    .cart-item-container {
+      @include block-set(100%, auto, auto, 0 auto, none);
+      max-width: 1170px;
+      box-sizing: border-box;
+      .cart-order-product {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        align-items: center;
+        justify-items: center;
+        width: auto;
+        align-self: center;
+        padding: 10px;
+        margin: 10px auto;
+        background: var(--color-white);
+      }
+      img {
+        width: 50px;
+        height: auto;
+      }
+      .cart-close img {
+        width: 20px;
+      }
+      .cart-close{
+        cursor: pointer;
+      }
+    }
+    .total_order_price {
+      @include block-set(100%, auto, 10px, 0 auto, var(--color-green));
+      max-width: 1170px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+
+      p,
+      h3 {
+        @include font-face(
+                        $font-size-header-fourth * 1px,
+                        500,
+                        var(--color-white)
+        );
+      }
+    }
+    .order_delivery {
+      @include block-set(
+                      100%,
+                      auto,
+                      30px,
+                      50px auto 10px auto,
+                      var(--color-white)
+      );
+      box-sizing: border-box;
+      max-width: 1170px;
+
+      .radio_group {
+        display: flex;
+        justify-content: left;
+        gap: 30px;
+      }
+
+      /* The container */
+      .container {
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default radio button */
+      .container input {
+        //position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+      }
+
+      /* Create a custom radio button */
+      .checkmark {
+        @include font-face(12px, 500, var(--color-dark));
+        background: #eee url("../images/svg/truck_dark.svg") 20px 50% no-repeat;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 30px 15px 60px;
+        border-radius: 50px;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+        transition: 1s;
+      }
+
+      /* When the radio button is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        color: var(--color-white);
+        background: var(--color-green) url("../images/svg/truck_light.svg") 20px
+        50% no-repeat;
+        transition: 0.3s;
+      }
+
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the indicator (dot/circle) when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+    }
+    .order_info {
+      @include block-set(100%, auto, 30px, 10px auto, var(--color-white));
+      box-sizing: border-box;
+      max-width: 1170px;
+    }
+    .order_payment {
+      @include block-set(
+                      100%,
+                      auto,
+                      30px,
+                      10px auto 10px auto,
+                      var(--color-white)
+      );
+      box-sizing: border-box;
+      max-width: 1170px;
+    }
+  }
+  .go-back {
+    border: 0;
+    padding: 10px 20px;
+    background: var(--color-green);
+    color: var(--color-white);
+    border-radius: 30px;
+    margin-left: 30px;
+    order: 1;
+    text-decoration: none;
+    text-align: center;
+    @include font-face($font-size-regular*1px, 300, var(--color-white));
+  }
+
+  &__header_container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1170px;
+    align-items: center;
+    margin: 30px auto;
+    padding: 0 30px;
+  }
+  .order_info form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      border-radius: 0;
+      border-color: rgba(0, 0, 0, 0.1);
+      height: 30px;
+      padding: 5px 10px;
+      margin: 0;
+      text-transform: none;
+      font-weight: 200;
+      @include font-face(12px, 100, var(--color-dark));
+    }
+    textarea {
+      padding: 5px 10px;
+      border-color: rgba(0, 0, 0, 0.1);
+      min-height: 80px;
+    }
+    label {
+      @include font-face(16px, 500, var(--color-dark));
+    }
+  }
+  .order_payment {
+    &__container {
+      margin: 20px 0;
+    }
+    /* The container */
+    .wrapper {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      @include font-face(16px, 500, var(--color-dark));
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .wrapper input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .wrapper:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .wrapper input:checked ~ .checkmark {
+      background-color: var(--color-green);
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .wrapper input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .wrapper .checkmark:after {
+      top: 9px;
+      left: 9px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+  }
 }
 
 .section_02 {
@@ -403,6 +758,7 @@ input {
     justify-content: center;
     flex-wrap: nowrap;
   }
+
   &__banner.container img {
     width: 100%;
     height: auto;
@@ -414,6 +770,7 @@ input {
     align-items: center;
     text-align: right;
   }
+
   &__banner.container .inner_right {
     display: flex;
     justify-content: center;
@@ -424,61 +781,132 @@ input {
   &__banner.container .text {
     position: absolute;
     width: 50%;
-    @include font-face($font-size-header-third * 1px, 600, var(--color-white));
+    @include font-face(3rem, 600, var(--color-white));
     box-sizing: border-box;
     text-transform: uppercase;
   }
 }
 
-.section_03{
-	  @include block-set(
-    100%,
-    auto,
-    80px 0,
-    0 auto,
-    url("../images/bg_fon_2.png") repeat
+.section_03 {
+  @include block-set(
+                  100%,
+                  auto,
+                  50px 0 50px 0,
+                  0 auto,
+                  url("../images/bg_fon_2.png") 0 100% no-repeat
   );
   display: flex;
   justify-content: center;
   flex-direction: column;
-	align-items: center;
-	
-	 h2 {
+  align-items: center;
+
+  h2 {
     margin: 0 0 30px 0;
     text-align: center;
   }
-	
-	&__info{
-		@include block-set(auto, auto, 0, 0 30px, none);
-		max-width: 1170px;
-		display: flex;
-		justify-content: center;
-		
-		gap:30px;
-		
-	}
+
+  &__info {
+    @include block-set(auto, auto, 0, 0 30px, none);
+    width: 1170px;
+    display: flex;
+    justify-content: center;
+
+    gap: 30px;
+
+    h3 {
+      margin: 20px 0 0 0;
+    }
+
+    .sub_text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+  }
 }
 
-.section_04{
-	@include block-set(
-    100%,
-    100px,
-    0,
-    0 auto,
-    var(--color-green)
-  );
+.section_04 {
+  @include block-set(100%, 100px, 0, 0 auto, var(--color-green));
   display: flex;
   justify-content: center;
+
+  &__container {
+    display: flex;
+    width: 1170px;
+    justify-content: space-between;
+    gap: 50px;
+    height: 100%;
+    align-items: center;
+    @include font-face($font-size-regular * 1px, 400, var(--color-white));
+    text-transform: uppercase;
+  }
+
+  &__container.phone {
+    background: url("../images/svg/phone_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &__container.email {
+    background: url("../images/svg/email_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &__container.support {
+    background: url("../images/svg/support_small.svg") 0 50% no-repeat;
+    padding-left: 40px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  span.black {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
 }
 
-.footer{
-	@include block-set(
-    100%,
-    auto,
-    50px 0,
-    0 auto,
-    var(--color-dark)
-  );
+.footer {
+  @include block-set(100%, auto, 50px 0, 0 auto, var(--color-dark));
   display: flex;
   justify-content: center;
+  color: var(--color-white);
+
+  &__container {
+    width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+  }
+
+  &__container .tel {
+    @include font-face($font-size-header-third * 1px, 500, var(--color-white));
+    margin-top: 20px;
+  }
+
+  &__container .time {
+    @include font-face($font-size-header-fifth * 1px, 300, var(--color-beige));
+  }
+
+  &__container a {
+    @include font-face($font-size-regular * 1px, 300, var(--color-white));
+    text-transform: none;
+    text-decoration: none;
+    margin: 5px 0;
+    display: inline-flex;
+  }
+
+  &__container a:hover {
+    color: var(--color-beige);
+  }
+
+  &__container h5 {
+    margin-bottom: 10px;
+  }
 }
