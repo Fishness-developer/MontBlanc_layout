@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 productArray.push(obj)
             })
 
-                method: 'POST',
+                method: 'POST'
                 })
                 .then(r => r.text())
                 })
