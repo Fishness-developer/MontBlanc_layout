@@ -1,4 +1,4 @@
-// Slider
+// SliderBox
 const slides = document.querySelectorAll(".slider__items-inner")
 let slideIndex = 0
 let intervalId = null
