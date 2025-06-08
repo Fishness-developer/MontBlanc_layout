@@ -1,0 +1,204 @@
+<!-- React project-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+        content="E-shop of italian quality products">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <title>Mont Blank</title>
+  <script src="scripts/script.js" defer></script>
+  <script src="scripts/cart.js" defer></script>
+  <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="header">
+  <div class="header__inner">
+    <a class="header__logo logo" href="/"> <img class="logo__image" src="./images/Logo.png"  alt="Mont Blank" width="250" height="84"/> </a>
+    <div class="header__menu services">
+      <ul>
+        <li class="header__menu-item"><a href="/">Help </a></li>
+        <li class="header__menu-item"><a href="/">Registration</a></li>
+        <li class="header__menu-item"><a href="/">Login</a></li>
+      </ul>
+    </div>
+    <div class="header__contact phone">
+      <p class="tel">050 145-28-41</p>
+      <p class="time">support 0800 574 54 44 </p>
+    </div>
+    <div class="header__contact time">
+      <p class="tel">Store Opening</p>
+      <p class="time">daily from 8.00 to 21.00 </p>
+    </div>
+    <div class="header__cart_container">
+      <div class="header__cart">
+        <button class="header__button button cart">
+          <p>cart</p>
+          <p class="amount-items-null" data-amount></p>
+        </button>
+      </div>
+      <div class="header__drop-cart-container">
+        <div class="header__drop-cart">
+          <div class="drop-cart-inner">
+            <p class="cart_header">Your order: </p>
+            <p class="cart-amount"><span class="cart-amount-total">&nbsp;</span> ₪</p>
+          </div>
+          <div class="cart-item-container" data-items>
+
+          </div>
+          <a  href="cart.html" class="header__drop-cart-button hide" data-cart-total> Order</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<nav class="nav">
+  <ul class="nav__menu">
+    <li class="nav__menu-item"><a href="/">gift card</a></li>
+    <li class="nav__menu-item"><a href="/">special programs</a></li>
+    <li class="nav__menu-item"><a href="/">sales</a></li>
+    <li class="nav__menu-item"><a href="/">delivery</a></li>
+    <li class="nav__menu-item"><a href="/">contacts</a></li>
+  </ul>
+</nav>
+<section class="section_catalog">
+  <div class="section_catalog__container">
+    <div class="left_sidebar">
+      <h3>Catalog</h3>
+    <ul class="catalog__list">
+      <li><a href="">Farm gastronomy</a> </li>
+      <li><a href="">Italian cheeses</a></li>
+      <li><a href="">Meat delicacies</a></li>
+      <li><a href="">Italian cheeses</a></li>
+      <li><a href="">Meat delicacies</a></li>
+      <li><a href="">Type of food</a></li>
+      <li><a href="">Ready meals</a></li>
+      <li><a href="">Italian ice cream</a></li>
+      <li><a href="">Italian sweets</a></li>
+      <li><a href="">Italian desserts</a></li>
+      <li><a href="">Italian pasta</a></li>
+      <li><a href="">Rice, polenta and soups</a></li>
+      <li><a href="">Olive oil</a></li>
+    </ul>
+    </div>
+    <div class="right_sidebar">
+      <h3>italian cheeses</h3>
+      <ul class="section_01__promotions">
+        <li class="section_01__promotions-item" data-product-name="Oil Costa d’Oro"><a href="/">
+          <div class="item-image"><img src="images/products/Costa_dOro.png" width="137" height="156" alt=""/>
+          </div>
+          <p class="price"><span class="extra">45.00</span> ₪</p>
+          <p class="offer">58.00₪<span class="percent">-23%</span></p>
+          <p class="item-description">Olive oil Extra Virgin, Costa d’Oro</p>
+        </a>
+          <div class="amount">
+            <button data-amount-decrease>-</button>
+            <input type="number" value="1" class="amount-input"/>
+            <button data-amount-increase>+</button>
+          </div>
+          <button class="section_01__promotions-item-button button" data-cart> add to cart</button>
+        </li>
+        <li class="section_01__promotions-item" data-product-name="Chips San Carlo"><a href="/">
+          <div class="item-image"><img src="images/products/chips.jpg" width="149" height="170" alt=""/></div>
+          <p class="price"><span class="extra">16.00</span> ₪</p>
+          <p class="offer">21.00₪<span class="percent">-15%</span></p>
+          <p class="item-description" data-product-name>Potato chips Classic, San Carlo </p>
+        </a>
+          <div class="amount">
+            <button data-amount-decrease>-</button>
+            <input type="number" value="1" class="amount-input"/>
+            <button data-amount-increase>+</button>
+          </div>
+          <button class="section_01__promotions-item-button button" data-cart> add to cart</button>
+        </li>
+        <li class="section_01__promotions-item" data-product-name="Tuna ARTIGIANO"><a href="/">
+          <div class="item-image"><img src="images/products/Tuna.jpg" width="149" height="170" alt=""/></div>
+          <p class="price"><span class="extra">24.00</span> ₪</p>
+          <p class="offer">30.00₪<span class="percent">-15%</span></p>
+          <p class="item-description">Tuna striped fillet-slices in oil tin, ARTIGIANO</p>
+        </a>
+          <div class="amount">
+            <button data-amount-decrease>-</button>
+            <input type="number" value="1" class="amount-input"/>
+            <button data-amount-increase>+</button>
+          </div>
+          <button class="section_01__promotions-item-button button" data-cart> add to cart</button>
+        </li>
+        <li class="section_01__promotions-item" data-product-name="Cheese LeSuperbe"><a href="/">
+          <div class="item-image"><img src="images/products/cheese.jpg" width="149" height="170" alt=""/></div>
+          <p class="price"><span class="extra">56.00</span> ₪</p>
+          <p class="offer">68.00₪<span class="percent">-21%</span></p>
+          <p class="item-description">Tet de Moine cheese, LeSuperbe </p>
+        </a>
+          <div class="amount">
+            <button data-amount-decrease>-</button>
+            <input type="number" value="1" class="amount-input"/>
+            <button data-amount-increase>+</button>
+          </div>
+          <button class="section_01__promotions-item-button button" data-cart> add to cart</button>
+        </li>
+        <li class="section_01__promotions-item" data-product-name="Ketchup Mutti"><a href="/" class="item_link">
+          <div class="item-image"><img src="images/products/ketchup.jpg" width="149" height="170" alt=""/></div>
+          <p class="price"><span class="extra">18.00</span> ₪</p>
+          <p class="offer">23.00₪<span class="percent">-15%</span></p>
+          <p class="item-description">Tomato ketchup, Mutti </p>
+        </a>
+          <div class="amount">
+            <button data-amount-decrease>-</button>
+            <input type="number" value="1" class="amount-input"/>
+            <button data-amount-increase>+</button>
+          </div>
+          <button class="section_01__promotions-item-button button" data-cart> add to cart</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+</section>
+
+<section class="section_04">
+  <div class="section_04__container">
+    <div class="section_04__container phone"><span class="black">phone:</span> 050 145-28-41</div>
+    <div class="section_04__container email"><span class="black">e-mail:</span> info@montblank.com</div>
+    <div class="section_04__container support"><span class="black">support:</span> support@montblank.com</div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer__container">
+    <div><img src="images/Logo.png" width="250" height="84" alt=""/>
+      <p class="tel">050 145-28-41</p>
+      <p class="time">daily from 8.00 to 21.00 </p>
+    </div>
+    <div>
+      <h5>For buyers</h5>
+      <ul>
+        <li class="header__menu-item"><a href="/">Brand </a></li>
+        <li class="header__menu-item"><a href="/">Recipes </a></li>
+        <li class="header__menu-item"><a href="/">How to order</a></li>
+        <li class="header__menu-item"><a href="/">Return of goods </a></li>
+        <li class="header__menu-item"><a href="/">Loyalty program</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>information</h5>
+      <ul>
+        <li class="header__menu-item"><a href="/">Delivery and payment </a></li>
+        <li class="header__menu-item"><a href="/">Contacts and details</a></li>
+        <li class="header__menu-item"><a href="/">Privacy policy</a></li>
+        <li class="header__menu-item"><a href="/">Consent to data processing </a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>We accept payment</h5>
+      <img src="images/payment.png" width="170" alt="payment"/></div>
+  </div>
+</footer>
+</body>
+</html>

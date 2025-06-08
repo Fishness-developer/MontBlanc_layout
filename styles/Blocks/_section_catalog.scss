@@ -1,0 +1,45 @@
+.section_catalog {
+	@include block-set(
+			100%,
+			auto,
+			50px 0,
+			0 auto,
+			#F6F6F6
+	);
+	display: flex;
+	justify-content:center;
+	h3 {
+		color: var(--color-dark);
+		margin: 0;
+		text-align: left;
+	}
+	&__container {
+		width: 1170px;
+		display: flex;
+		justify-content:space-between;
+		gap: 30px;
+		.left_sidebar{
+			width: 20%;
+			ul.catalog__list{
+				display: flex;
+				flex-direction:  column;
+				gap: 10px;
+				margin: 20px 0;
+				a{
+					@include font-face(14px, 400, var(--color-dark));
+					text-decoration: none;
+				}
+				a:hover{
+					color: var(--color-green);
+				}
+			}
+		}
+		.right_sidebar{
+			width: 80%;
+			.section_01__promotions{
+				justify-content: left;
+
+			}
+		}
+	}
+}
