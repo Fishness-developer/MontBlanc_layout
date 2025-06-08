@@ -10,6 +10,16 @@ body {
   height: 100vh;
 
 }
+.button,
+input {
+  border-radius: #{$border-radius-button}px;
+  height: #{$height-button}px;
+  padding: #{$padding-button}px;
+  text-decoration: none;
+  @include font-face($font-size-regular * 1px, 400, var(--color-white));
+  text-transform: uppercase;
+}
+
 
 h1 {
   @include font-face($font-size-header-first/10*1rem, 900, var(--color-dark));

@@ -1,0 +1,38 @@
+.nav {
+	display: flex;
+	@include block-set(100%, 60px, 0, 0 auto, var(--color-dark));
+
+	&__menu {
+		@include block-set(auto, 60px, 0, 0 auto, none);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 50px;
+		white-space: nowrap;
+	}
+
+	&__menu-item a {
+		@include font-face($font-size-regular * 0.1rem, 300, var(--color-white));
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	&__menu-item a::after {
+		content: "";
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 0;
+		height: 1px;
+		background: var(--color-beige);
+	}
+
+	&__menu-item a:hover::after {
+		width: 100%;
+	}
+
+	&__menu-item a:hover {
+		color: var(--color-beige);
+	}
+}
